@@ -5,7 +5,7 @@
 <!-- Mirrored from html.crumina.net/cryptoki/ds/01-home-ds.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Nov 2021 04:52:56 GMT -->
 <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Dashboard</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -88,7 +88,7 @@
             <div class="mobile-menu-wrapper">
                 <!-- mobile menu -->
                 <ul class="mobile-menu">
-                    <li class="menu-item"><a class="menu-link" href="01-home-ds.html">Home</a></li>
+                    <li class="menu-item"><a class="menu-link" href="01-home-ds.html">Dashboard</a></li>
                     <li class="menu-item menu-item-has-children"><a class="menu-link" href="#">Explore
                             <span class="indicator"><svg class="crumina-icon">
                                     <use xlink:href="#arrow-down-icon"></use>
@@ -114,7 +114,7 @@
                                     <div class="megamenu-title">Main Pages</div>
                                     <div>
                                         <ul class="submenu-column">
-                                            <li class="menu-item"><a href="01-home-ds.html" class="menu-link">Home</a>
+                                            <li class="menu-item"><a href="01-home-ds.html" class="menu-link">Dashboard</a>
                                             </li>
                                             <li class="menu-item"><a href="02-explore.html"
                                                     class="menu-link">Explore</a></li>
@@ -264,7 +264,7 @@
                     <!-- header logo -->
                     <!--  navigation menu -->
                     <ul class="navigation-menu">
-                        <li class="menu-item"><a class="menu-link" href="01-home-ds.html">Home</a></li>
+                        <li class="menu-item"><a class="menu-link" href="01-home-ds.html">Dashboard</a></li>
                         <li class="menu-item menu-item-has-children"><a class="menu-link" href="#">Explore
                                 <span class="indicator"><svg class="crumina-icon">
                                         <use xlink:href="#arrow-down-icon"></use>
@@ -291,7 +291,7 @@
                                         <div class="flex-space-between">
                                             <ul class="submenu-column">
                                                 <li class="menu-item"><a href="01-home-ds.html"
-                                                        class="menu-link">Home</a></li>
+                                                        class="menu-link">Dashboard</a></li>
                                                 <li class="menu-item"><a href="02-explore.html"
                                                         class="menu-link">Explore</a></li>
                                                 <li class="menu-item"><a href="03-shop-category.html"
@@ -642,7 +642,7 @@
         <div class="primary-content-area bottom-padding-70 ">
             <!-- fullwidth banner -->
             <div class="section-padding fullwidth-banner">
-                <div class="banner-overlay" style="background-image:url(img/content/home-banner.png)"></div>
+                <div class="banner-overlay" style="background-image:url(img/content/dashboard-banner.png)"></div>
                 <div class="search-form-with-text section-small">
                     <div class="text-content">
                         <div class="subtitle">WELCOME TO CRIPTOKI</div>
@@ -1954,7 +1954,7 @@
                                 <div class="widget-content flex-space-between">
                                     <div class="is-two-col-element">
                                         <ul class="footer-menu">
-                                            <li class="menu-item"><a class="menu-link" href="01-home-ds.html">Home</a>
+                                            <li class="menu-item"><a class="menu-link" href="01-home-ds.html">Dashboard</a>
                                             </li>
                                             <li class="menu-item"><a class="menu-link"
                                                     href="02-explore.html">Explore</a></li>
