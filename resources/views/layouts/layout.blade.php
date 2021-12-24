@@ -39,7 +39,7 @@
         <!-- mobile navigation panel -->
         <div class="mobile-nav-panel">
             <div class="mobile-nav-header">
-                <div class="mobile-menu-logo logo"><a href="01-home-ds.html"><img src="svg/logo-ds.svg" alt="logo"></a>
+                <div class="mobile-menu-logo logo"><a href="/dashboard"><img src="svg/logo-ds.svg" alt="logo"></a>
                 </div>
                 <svg class="crumina-icon close-icon">
                     <use xlink:href="#cross-icon"></use>
@@ -48,7 +48,7 @@
             <div class="mobile-menu-wrapper">
                 <!-- mobile menu -->
                 <ul class="mobile-menu">
-                    <li class="menu-item"><a class="menu-link" href="01-home-ds.html">Home</a></li>
+                    <li class="menu-item"><a class="menu-link" href="/dashboard">Home</a></li>
                     <li class="menu-item menu-item-has-children"><a class="menu-link" href="#">Order Design
                     <li class="menu-item"><a class="menu-link" href="07-sellers.html">Forum</a></li>
                     <li class="menu-item menu-item-has-megamenu menu-item-has-children"><a class="menu-link"
@@ -61,7 +61,7 @@
                                     <div class="megamenu-title">Main Pages</div>
                                     <div>
                                         <ul class="submenu-column">
-                                            <li class="menu-item"><a href="01-home-ds.html" class="menu-link">Home</a>
+                                            <li class="menu-item"><a href="/dashboard" class="menu-link">Home</a>
                                             </li>
                                             <li class="menu-item"><a href="02-explore.html"
                                                     class="menu-link">Explore</a></li>
@@ -211,7 +211,7 @@
                     <!-- header logo -->
                     <!--  navigation menu -->
                     <ul class="navigation-menu">
-                        <li class="menu-item"><a class="menu-link" href="01-home-ds.html">Home</a></li>
+                        <li class="menu-item"><a class="menu-link" href="/dashboard">Home</a></li>
                         <li class="menu-item"><a class="menu-link" href="#">Order Design
                         <li class="menu-item"><a class="menu-link" href="07-sellers.html">Forum</a></li>
                         <li class="menu-item"><a class="menu-link" href="#">About Us</a></li>
@@ -306,7 +306,7 @@
                     <!-- header user profile -->
                     <div class="header-user-profile cryptoki-notif-bttn" data-target="profile-dropdown">
                         <div class="user-meta">
-                            <div class="user_name">Dexter Stark</div>
+                            <div class="user_name">{{Auth::user()->name}}</div>
                             <div class="user_score">$291.36</div>
                         </div>
                         <div class="avatar box-42">
@@ -442,7 +442,7 @@
                                 <div class="widget-content flex-space-between">
                                     <div class="is-two-col-element">
                                         <ul class="footer-menu">
-                                            <li class="menu-item"><a class="menu-link" href="01-home-ds.html">Home</a>
+                                            <li class="menu-item"><a class="menu-link" href="/dashboard">Home</a>
                                             </li>
                                             <li class="menu-item"><a class="menu-link"
                                                     href="02-explore.html">Explore</a></li>
