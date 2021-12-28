@@ -13,10 +13,12 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Product $product)
     {
         
-        // return view('dashboard',['allProducts' => $product]);
+        $cartItems = \Cart::session(auth()->id())->getContent();
+        // dd(product);
+        return view('products.index',['product' => $product, 'cartItems' => $cartItems]);
     }
 
     /**
@@ -48,7 +50,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $cartItems = \Cart::session(auth()->id())->getContent();
+
+        return view('products.index',compact('product','cartItems'));
     }
 
     /**

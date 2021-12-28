@@ -237,8 +237,8 @@
                     <div class="cart-total-box">
                         <div class="cart-total-wrapper">
                             <div class="small-title">Order Total</div>
-                            <div class="total-price">$115.00</div>
-                            <div class="total-price-details">
+                            <div class="total-price">{{\Cart::session(auth()->id())->getTotal()}}</div>
+                            <!-- <div class="total-price-details">
                                 <div class="field">
                                     <div class="label">Cart</div>
                                     <div class="value">$120.00</div>
@@ -251,7 +251,7 @@
                                     <div class="label">Total</div>
                                     <div class="value">$115.00</div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="to-checkout-button">
                                 <a class="btn btn-wide gradient-background" href="#">Proceed to Checkout</a>
                             </div>

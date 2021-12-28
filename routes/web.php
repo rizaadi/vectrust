@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ Route::middleware('auth:sanctum')->get('/dashboard', [HomeController::class,'ind
 Route::get('/add-to-cart/{product}', [CartController::class,'add'])->name('cart.add')->middleware('auth');
 Route::get('/cart', [CartController::class,'index'])->name('cart.index')->middleware('auth');
 Route::get('/cart/destroy/{itemId}', [CartController::class,'destroy'])->name('cart.destroy')->middleware('auth');
+
+Route::get('/product/{product}', [ProductController::class,'index'])->name('products.index')->middleware('auth');
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');

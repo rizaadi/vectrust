@@ -16,8 +16,10 @@ class HomeController extends Controller
     public function index()
     {
         $product = Product::take(12)->get();
-        // dd($product);
-        return view('dashboard',['allProducts' => $product]);
+        $cartItems = \Cart::session(auth()->id())->getContent();
+        // dd($cartItems);
+
+        return view('dashboard',['allProducts' => $product, 'cartItems' => $cartItems]);
     }
 
     /**

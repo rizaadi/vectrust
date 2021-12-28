@@ -321,7 +321,7 @@
                                     <svg class="crumina-icon">
                                         <use xlink:href="#heart-icon"></use>
                                     </svg><span class="count">Cart</span></a></div>
-                            <div class="featured-item-image"><a href="05-product.html">
+                            <div class="featured-item-image"><a href="{{route('products.index', $product->id)}}">
                                     <img src="img/content/items/featured-item-29.png" alt=""></a>
                             </div>
                             <div class="featured-item-info">

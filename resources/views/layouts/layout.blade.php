@@ -18,11 +18,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 
     
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/swiper-bundle.css">
-    <link rel="stylesheet" href="css/nice-select2.css">
+    <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/fonts.css')}}">
+    <link rel="stylesheet" href="{{asset('css/swiper-bundle.css')}}">
+    <link rel="stylesheet" href="{{asset('css/nice-select2.css')}}">
 
     <meta name="theme-color" content="#fafafa">
 </head>
@@ -39,7 +39,7 @@
         <!-- mobile navigation panel -->
         <div class="mobile-nav-panel">
             <div class="mobile-nav-header">
-                <div class="mobile-menu-logo logo"><a href="/dashboard"><img src="svg/logo-ds.svg" alt="logo"></a>
+                <div class="mobile-menu-logo logo"><a href="/dashboard"><img src="{{asset('svg/logo-ds.svg')}}" alt="logo"></a>
                 </div>
                 <svg class="crumina-icon close-icon">
                     <use xlink:href="#cross-icon"></use>
@@ -231,57 +231,41 @@
                         <!-- cart button -->
                         <div class="cart-button-cont">
                         <button class="cart-button cryptoki-notif-bttn" data-target="cart-dropdown">
-                            <span class="counter">3</span>
+                            <span class="counter">{{Cart::session(auth()->id())->getTotalQuantity()}}</span>
                             <svg class="crumina-icon">
                                 <use xlink:href="#bag-icon"></use>
                             </svg>
                         </button>
                             <div id="cart-dropdown" class="cryptoki-notif-target">
                                 <div class="title">
-                                    Your Cart <span class="colored">3</span>
+                                    Your Cart <span class="colored">@auth
+                                        {{Cart::session(auth()->id())->getContent()->count()}}
+                                        @else
+                                        0
+                                        @endauth</span>
                                 </div>
                                 <div class="cart-wrapper">
+                                    @foreach ($cartItems as $item)
                                     <div class="cart-product">
-                                        <div class="thumb-box"><a href="05-product.html"><img src="img/content/notifications/notif-thumb-1.png"
+                                        <div class="thumb-box"><a href="05-product.html"><img src="{{asset('img/content/notifications/notif-thumb-1.png')}}"
                                                 alt=""></a></div>
                                         <div class="purchase-info">
                                             <div class="product-info">
-                                                <div class="product-title"><a href="05-product.html">Cryptoki NFT and Digital Market PSD Template</a>
+                                                <div class="product-title"><a href="05-product.html">{{$item['name']}}</a>
                                                 </div>
-                                                <div class="product-price">$12.00</div>
+                                                <div class="product-price">{{$item['price']}}</div>
                                             </div>
                                             <div class="product-type ui-templates">UI templates</div>
                                         </div>
                                     </div>
-                                    <div class="cart-product">
-                                        <div class="thumb-box"><a href="05-product.html"><img src="img/content/notifications/notif-thumb-2.png"
-                                                alt=""></a></div>
-                                        <div class="purchase-info">
-                                            <div class="product-info">
-                                                <div class="product-title"><a href="05-product.html">Twitter Gaming Headers Pack 04</a></div>
-                                                <div class="product-price">$40.00</div>
-                                            </div>
-                                            <div class="product-type social-graphics">Social graphics</div>
-                                        </div>
-                                    </div>
-                                    <div class="cart-product">
-                                        <div class="thumb-box"><a href="05-product.html"><img src="img/content/notifications/notif-thumb-3.png"
-                                                alt=""></a></div>
-                                        <div class="purchase-info">
-                                            <div class="product-info">
-                                                <div class="product-title"><a href="05-product.html">Olympus WP - Social Networking Theme</a></div>
-                                                <div class="product-price">$68.00</div>
-                                            </div>
-                                            <div class="product-type coded-templates">Coded templates</div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                                 <div class="total-price">
                                     <div class="heading">Cart Total</div>
-                                    <div class="price">$120.00</div>
+                                    <div class="price">{{\Cart::session(auth()->id())->getTotal()}}</div>
                                 </div>
                                 <div class="cart-buttons">
-                                    <a href="08-shopping-cart.html" class="btn-small gradient-background btn-square">Go to
+                                    <a href="{{'/cart'}}" class="btn-small gradient-background btn-square">Go to
                                         Cart</a>
                                     <a href="09-checkout.html" class="btn-small btn-dark btn-square">Checkout</a>
                                 </div>
@@ -310,7 +294,7 @@
                             <div class="user_score">$291.36</div>
                         </div>
                         <div class="avatar box-42">
-                            <img src="img/avatar.png" alt="avatar"><span class="verified"><svg class="crumina-icon">
+                            <img src="{{asset('img/avatar.png')}}" alt="avatar"><span class="verified"><svg class="crumina-icon">
                                     <use xlink:href="#check-icon"></use>
                                 </svg></span>
                         </div>
@@ -324,7 +308,7 @@
                             <div class="profile-dropdown-body">
                                 <div class="profile-heading">
                                     <div class="profile-avatar avatar box-26">
-                                        <img src="img/avatar.png" alt="avatar"><span class="verified"><svg
+                                        <img src="{{asset('img/avatar.png')}}" alt="avatar"><span class="verified"><svg
                                                 class="crumina-icon">
                                                 <use xlink:href="#check-icon"></use>
                                             </svg></span>
@@ -525,12 +509,12 @@
 
 
     <!-- Add your site or application content here -->
-  <script defer src="js/swiper-bundle.min.js"></script>
-  <script defer src="js/main.js"></script>
-  <script defer src="js/countdown.js"></script>
-  <script defer src="js/waves.min.js"></script>
-  <script async src="js/svg-loader.js"></script>
-  <script defer src="js/nice-select2.js"></script>
+  <script defer src="{{asset('js/swiper-bundle.min.js')}}"></script>
+  <script defer src="{{asset('js/main.js')}}"></script>
+  <script defer src="{{asset('js/countdown.js')}}"></script>
+  <script defer src="{{asset('js/waves.min.js')}}"></script>
+  <script async src="{{asset('js/svg-loader.js')}}"></script>
+  <script defer src="{{asset('js/nice-select2.js')}}"></script>
 
 </body>
 
