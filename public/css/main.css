@@ -6286,6 +6286,7 @@ blockquote p {
 }
 
 .featured-item .featured-item-content {
+    
     background-color: var(--body-background);
     border-bottom: 1px solid var(--border-color);
     border-radius: 25px;
@@ -6295,6 +6296,7 @@ blockquote p {
 }
 
 .fav-counter {
+    font-weight: var(--heading-font-weight);
     display: flex;
     align-items: center;
     background: var(--body-background);
@@ -6684,6 +6686,8 @@ blockquote p {
 
 .featured-item.v5 .featured-item-content {
     padding: 14px;
+    /* anyar */
+    /* padding-top: 0px;  */
 }
 
 .featured-item.v5 .title {
@@ -9946,6 +9950,10 @@ table .item-price {
     right: -12px;
     top: 18px;
     z-index: 1;
+
+    /* right: -175px;
+    top: 9px;
+    z-index: 1; */
 }
 
 .manage-items .featured-item.v5 .fav-counter {

@@ -23,8 +23,11 @@
     <link rel="stylesheet" href="{{asset('css/fonts.css')}}">
     <link rel="stylesheet" href="{{asset('css/swiper-bundle.css')}}">
     <link rel="stylesheet" href="{{asset('css/nice-select2.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> -->
 
+    <script src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
     <meta name="theme-color" content="#fafafa">
+    <meta name="csrf-token" content="{{csrf_token()}}">
 </head>
 
 <body class="loading">
@@ -334,10 +337,10 @@
                                     <li><a href="11-profile-sales-statement.html"><svg class="crumina-icon">
                                                 <use xlink:href="#file-text-icon"></use>
                                             </svg>Sales Statement</a></li>
-                                    <li><a href="12-profile-upload-item.html"><svg class="crumina-icon">
+                                    <li><a href="{{'/profile/upload'}}"><svg class="crumina-icon">
                                                 <use xlink:href="#picture-icon"></use>
                                             </svg>Upload Item</a></li>
-                                    <li><a href="13-profile-manage-items.html"><svg class="crumina-icon">
+                                    <li><a href="#"><svg class="crumina-icon">
                                                 <use xlink:href="#picture-icon"></use>
                                             </svg>Manage Items</a></li>
                                     <li><a href="14-profile-payment-history.html"><svg class="crumina-icon">
@@ -384,8 +387,7 @@
             <!-- header search block -->
         </nav>
         <!-- main content area -->
-        @section('content')
-        @show
+        @yield('content')
         <!-- main content area -->
         <!--Footer area-->
         <footer class="footer footer-margin">
@@ -506,8 +508,7 @@
         <!--Footer area-->
     </div>
 
-
-
+    @yield('page-style')
     <!-- Add your site or application content here -->
   <script defer src="{{asset('js/swiper-bundle.min.js')}}"></script>
   <script defer src="{{asset('js/main.js')}}"></script>
@@ -515,6 +516,7 @@
   <script defer src="{{asset('js/waves.min.js')}}"></script>
   <script async src="{{asset('js/svg-loader.js')}}"></script>
   <script defer src="{{asset('js/nice-select2.js')}}"></script>
+
 
 </body>
 

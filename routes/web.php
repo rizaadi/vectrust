@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VectorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,13 @@ Route::get('/cart/destroy/{itemId}', [CartController::class,'destroy'])->name('c
 
 Route::get('/product/{product}', [ProductController::class,'index'])->name('products.index')->middleware('auth');
 
+Route::get('/profile/upload', [ProfileController::class,'uploadvector'])->name('profile.uploadvector')->middleware('auth');
+Route::post('profile/upload/save',[VectorController::class,'save'])->name('save.vector');
+Route::get('profile/fetchvector',[ProfileController::class,'indexManage'])->name('fetch.vector');
+Route::get('profile/manage',[ProfileController::class,'indexManage'])->name('manage.index');
+Route::get('profile/editvector/{id}',[ProfileController::class,'editVector'])->name('edit.vector');
+Route::post('profile/storevector',[ProfileController::class,'storeVector'])->name('store.vector');
+Route::post('profile/deletevector',[ProfileController::class,'deleteVector'])->name('delete.vector');
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');

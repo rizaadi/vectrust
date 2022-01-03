@@ -384,4 +384,4 @@
 
     <!-- latest news -->
 </div>
-@endsection
+@stop
