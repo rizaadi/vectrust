@@ -49,9 +49,10 @@ class ProfileController extends Controller
     public function storeVector(Request $request)
     {
         $path = 'files/';
-        $vector = Vector::find($request->vid);
+        $vector_id = $request->vid;
+        $vector = Vector::find($vector_id);
         $validator = \Validator::make($request->all(),[
-            'name'=>'required|',
+            'name'=>'required|unique:vector,name,'.$vector_id,
             'itemImageUpdate'=>'image',
         ],[
             'itemImageUpdate.image'=>'Vector file must be an image'
@@ -60,14 +61,14 @@ class ProfileController extends Controller
             return response()->json(['code'=>0,'error'=>$validator->error()->toArray()]);
         } else {
             //update vector
-            if ($request->hasFile('itemImageUpdate')) {
+            if ($request->hasFile('itemImageUpdate')){
                 $file_path = $path.$vector->itemImage;
                 //hapus gambar lama
-                if ($vector->itemImage != null && \Storage::disk('public')->exists($file_path)) {
+                if ($vector->itemImage != null && \Storage::disk('public')->exists($file_path)){
                     \Storage::disk('public')->delete($file_path);
                 }
                 //upload gambar baru
-                $file = $request->File('itemImageUpdate');
+                $file = $request->file('itemImageUpdate');
                 $file_name = time().'_'.$file->getClientOriginalName();
                 $upload = $file->storeAs($path,$file_name,'public');
 
@@ -98,7 +99,6 @@ class ProfileController extends Controller
         
                     
    
-        return response()->json(['code'=>1,'msg'=>'product has been Update successfully']);
     }
     /**
      * Display a listing of the resource.

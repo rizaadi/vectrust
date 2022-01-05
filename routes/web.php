@@ -6,6 +6,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VectorController;
+use App\Http\Controllers\OrderdesignController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ use App\Http\Controllers\VectorController;
 Route::redirect('/', '/dashboard');
 Route::middleware('auth:sanctum')->get('/dashboard', [HomeController::class,'index'])->name('dashboard');
 
+Route::get('/orderdesign', [OrderdesignController::class,'index'])->name('orderdesign')->middleware('auth');
+
 Route::get('/add-to-cart/{product}', [CartController::class,'add'])->name('cart.add')->middleware('auth');
 Route::get('/cart', [CartController::class,'index'])->name('cart.index')->middleware('auth');
 Route::get('/cart/destroy/{itemId}', [CartController::class,'destroy'])->name('cart.destroy')->middleware('auth');
@@ -33,6 +36,9 @@ Route::get('profile/manage',[ProfileController::class,'indexManage'])->name('man
 Route::get('profile/editvector/{id}',[ProfileController::class,'editVector'])->name('edit.vector');
 Route::post('profile/storevector',[ProfileController::class,'storeVector'])->name('store.vector');
 Route::post('profile/deletevector',[ProfileController::class,'deleteVector'])->name('delete.vector');
+
+Route::get('/download/{filename}',[VectorController::class,'download'])->name('download.vector');
+Route::get('/vector/{vectorId}',[VectorController::class,'view'])->name('view.vector');
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');

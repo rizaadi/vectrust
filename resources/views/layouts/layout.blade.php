@@ -52,7 +52,7 @@
                 <!-- mobile menu -->
                 <ul class="mobile-menu">
                     <li class="menu-item"><a class="menu-link" href="/dashboard">Home</a></li>
-                    <li class="menu-item menu-item-has-children"><a class="menu-link" href="#">Order Design
+                    <li class="menu-item menu-item-has-children"><a class="menu-link" href="{{route('orderdesign')}}">Order Design
                     <li class="menu-item"><a class="menu-link" href="07-sellers.html">Forum</a></li>
                     <li class="menu-item menu-item-has-megamenu menu-item-has-children"><a class="menu-link"
                             href="#">All pages<span class="indicator"><svg class="crumina-icon">
@@ -112,7 +112,7 @@
                                                     class="menu-link">Sales Statement</a>
                                             </li>
                                             <li class="menu-item"><a href="12-profile-upload-item.html"
-                                                    class="menu-link">Upload Item</a></li>
+                                                    class="menu-link">Upload Vector</a></li>
                                         </ul>
                                         <ul class="submenu-column">
                                             <li class="menu-item"><a href="13-profile-manage-items.html"
@@ -215,7 +215,7 @@
                     <!--  navigation menu -->
                     <ul class="navigation-menu">
                         <li class="menu-item"><a class="menu-link" href="/dashboard">Home</a></li>
-                        <li class="menu-item"><a class="menu-link" href="#">Order Design
+                        <li class="menu-item"><a class="menu-link" href="{{route('orderdesign')}}">Order Design
                         <li class="menu-item"><a class="menu-link" href="07-sellers.html">Forum</a></li>
                         <li class="menu-item"><a class="menu-link" href="#">About Us</a></li>
                         </ul>
@@ -276,14 +276,14 @@
                         </div>
                         <!-- cart button -->
                         <!-- favourites buttons -->
-                        <div class="favourites-button-cont">
+                        <!-- <div class="favourites-button-cont">
                         <button class="favourites-button cryptoki-notif-bttn" data-target="">
-                            <span class="counter">7</span>
+                            <span class="counter">9</span>
                             <svg class="crumina-icon">
                                 <use xlink:href="#heart-icon"></use>
                             </svg>
                         </button>
-                        </div>
+                        </div> -->
                         <!-- favourites buttons -->
                         <!--  notifications dropdown -->
                         
@@ -294,7 +294,7 @@
                     <div class="header-user-profile cryptoki-notif-bttn" data-target="profile-dropdown">
                         <div class="user-meta">
                             <div class="user_name">{{Auth::user()->name}}</div>
-                            <div class="user_score">$291.36</div>
+                            <div class="user_score"></div>
                         </div>
                         <div class="avatar box-42">
                             <img src="{{asset('img/avatar.png')}}" alt="avatar"><span class="verified"><svg class="crumina-icon">
@@ -325,30 +325,30 @@
                                     <li><a href="26-profile-info.html"><svg class="crumina-icon">
                                                 <use xlink:href="#user-icon"></use>
                                             </svg>Profile Info</a></li>
-                                    <li><a href="%21.html#"><svg class="crumina-icon">
+                                    <!-- <li><a href="%21.html#"><svg class="crumina-icon">
                                                 <use xlink:href="#settings-icon"></use>
                                             </svg>Account Settings</a></li>
                                     <li><a href="%21.html#"><svg class="crumina-icon">
                                                 <use xlink:href="#slide-filter-icon"></use>
-                                            </svg>Notification Settings</a></li>
+                                            </svg>Notification Settings</a></li> -->
                                     <li><a href="10-profile-dashboard.html"><svg class="crumina-icon">
                                                 <use xlink:href="#dashboard-icon"></use>
                                             </svg>Dashboard</a></li>
-                                    <li><a href="11-profile-sales-statement.html"><svg class="crumina-icon">
+                                    <!-- <li><a href="11-profile-sales-statement.html"><svg class="crumina-icon">
                                                 <use xlink:href="#file-text-icon"></use>
-                                            </svg>Sales Statement</a></li>
-                                    <li><a href="{{'/profile/upload'}}"><svg class="crumina-icon">
+                                            </svg>Sales Statement</a></li> -->
+                                    <li><a href="{{route('profile.uploadvector')}}"><svg class="crumina-icon">
                                                 <use xlink:href="#picture-icon"></use>
-                                            </svg>Upload Item</a></li>
-                                    <li><a href="#"><svg class="crumina-icon">
+                                            </svg>Upload Vector</a></li>
+                                    <li><a href="{{route('manage.index')}}"><svg class="crumina-icon">
                                                 <use xlink:href="#picture-icon"></use>
                                             </svg>Manage Items</a></li>
-                                    <li><a href="14-profile-payment-history.html"><svg class="crumina-icon">
+                                    <!-- <li><a href="14-profile-payment-history.html"><svg class="crumina-icon">
                                                 <use xlink:href="#dollar-icon"></use>
                                             </svg>Payouts</a></li>
                                     <li><a href="15-profile-purchases.html"><svg class="crumina-icon">
                                                 <use xlink:href="#wallet-icon"></use>
-                                            </svg>Purchases</a></li>
+                                            </svg>Purchases</a></li> -->
                                     <li><a href="%21.html#"><svg class="crumina-icon">
                                                 <use xlink:href="#circle-checked-icon"></use>
                                             </svg>Get Verified</a></li>

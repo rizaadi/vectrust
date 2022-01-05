@@ -1,46 +1,7 @@
 @extends('layouts.layout')
 @section('content')
 <div class="primary-content-area container content-padding grid-small-sidebar-left">
-    <aside>
-        <!--    dashboard menu -->
-        <div class="user-db-menu-ds">
-            <ul class="profile-menu-ds">
-                <li><a href="26-profile-info.html"><svg class="crumina-icon">
-                            <use xlink:href="#user-icon"></use>
-                        </svg>Profile Info</a></li>
-                <li><a href="%21.html#"><svg class="crumina-icon">
-                            <use xlink:href="#settings-icon"></use>
-                        </svg>Account Settings</a></li>
-                <li><a href="%21.html#"><svg class="crumina-icon">
-                            <use xlink:href="#slide-filter-icon"></use>
-                        </svg>Notification Settings</a></li>
-                <li><a href="10-profile-dashboard.html"><svg class="crumina-icon">
-                            <use xlink:href="#dashboard-icon"></use>
-                        </svg>Dashboard</a></li>
-                <li><a href="11-profile-sales-statement.html"><svg class="crumina-icon">
-                            <use xlink:href="#file-text-icon"></use>
-                        </svg>Sales Statement</a></li>
-                <li><a href="12-profile-upload-item.html"><svg class="crumina-icon">
-                            <use xlink:href="#picture-icon"></use>
-                        </svg>Upload Item</a></li>
-                <li><a href="13-profile-manage-items.html"><svg class="crumina-icon">
-                            <use xlink:href="#picture-icon"></use>
-                        </svg>Manage Items</a></li>
-                <li><a href="14-profile-payment-history.html"><svg class="crumina-icon">
-                            <use xlink:href="#dollar-icon"></use>
-                        </svg>Payouts</a></li>
-                <li><a href="15-profile-purchases.html"><svg class="crumina-icon">
-                            <use xlink:href="#wallet-icon"></use>
-                        </svg>Purchases</a></li>
-                <li><a href="%21.html#"><svg class="crumina-icon">
-                            <use xlink:href="#circle-checked-icon"></use>
-                        </svg>Get Verified</a></li>
-                <li class="logout"><a href="%21.html#"><svg class="crumina-icon">
-                            <use xlink:href="#logout-icon"></use>
-                        </svg>Log Out</a></li>
-            </ul>
-        </div>
-    </aside>
+   @include('layouts.sidebar')
     <div class="main-content-area">
         <div class="page-title-section">
             <h2><span class="gradient-text">Manage</span> Items</h2>
@@ -48,24 +9,26 @@
         <!--   items grid -->
         <div class="featured-box manage-items">
             <div class="featured-box-wrapper grid-4-columns">
-                <div class="create-item">
-                    <div class="create-item-wrapper">
-                        <div class="create-item-content">
-                            <div class="create-item-image">
-                                <svg class="crumina-icon">
-                                    <use xlink:href="#upload-icon"></use>
-                                </svg>
-                            </div>
-                            <div class="create-item-info">
-                                <div class="small-title">Create a New Item!
+                <a href="{{route('profile.uploadvector')}}">
+                    <div class="create-item">
+                        <div class="create-item-wrapper">
+                            <div class="create-item-content">
+                                <div class="create-item-image">
+                                    <svg class="crumina-icon">
+                                        <use xlink:href="#upload-icon"></use>
+                                    </svg>
                                 </div>
-                                <div class="description">Click here to start</div>
+                                <div class="create-item-info">
+                                    <div class="small-title">Create a New Item!
+                                        </div>
+                                        <div class="description">Click here to start</div>
+                                    </div>
+                                </div>
+                                <div class="create-item-post-content">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="create-item-post-content">
-                        </div>
-                    </div>
-                </div>
+                        </a>
                 @foreach ($vector as $v)
                 <div class="featured-item v5">
                     <div class="featured-item-wrapper">

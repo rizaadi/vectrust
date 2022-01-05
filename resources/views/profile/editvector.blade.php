@@ -68,7 +68,7 @@
                                     <use xlink:href="#upload-icon"></use>
                                 </svg>
                                 <div class="upload-notice"> Max 120MB, PNG, JPEG, MP3, MP4</div>
-                                <input type="file" name="itemImage" class="">
+                                <input type="file" name="itemImageUpdate" class="">
                                 <!-- <button
                                     class="btn btn-normal btn-dark browse-btn waves-effect waves-button waves-float waves-light">Browse
                                     File</button> -->
@@ -101,6 +101,9 @@ $(function() {
 
                 var form = this;
                 $.ajax({
+                    headers:{
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
                     url: $(form).attr('action'),
                     method: $(form).attr('method'),
                     data: new FormData(form),
@@ -109,11 +112,6 @@ $(function() {
                     contentType: false,
                     beforeSend: function() {
                         $(form).find('span.error-text').text('');
-                    },
-                    error: function(xhr, status, error, data) {
-                        var err = eval("(" + xhr.responseText + ")");
-                        alert(err.Message);
-                        console.log('Error:', data);
                     },
                     success: function(data) {
                         if (data.code == 0) {

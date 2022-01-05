@@ -38,7 +38,7 @@
     <!-- featured items carousel -->
     <div class="container section-padding overflow-hidden ">
         <div class="section-title-wrapper">
-            <div class="section-title"><span class="gradient-text">Featured</span> Vector</div>
+            <div class="section-title"><span class="gradient-text">Featured</span> Items</div>
             <div class="title-navigation">
                 <div class="featured-carousel-icon swiper-button-prev"><svg class="crumina-icon">
                         <use xlink:href="#arrow-left2-icon"></use>
@@ -243,67 +243,6 @@
         </div>
     </div>
     <!-- featured items carousel -->
-    
-    <!-- featured items grid -->
-    <div class="container section-padding">
-        <div class="section-title-wrapper">
-            <div class="section-title"><span class="gradient-text">Newest</span> Vector</div>
-            <div class="all-items-link"><a href="02-explore.html">Explore all Artworks</a></div>
-        </div>
-        <div class="featured-box">
-            <div class="featured-box-wrapper grid-4-columns">
-                @foreach ($allVector as $vector)
-                <div class="featured-item v5">
-                    <div class="featured-item-wrapper">
-                        <div class="featured-item-content">
-                            <!-- <div class="fav-counter">
-                                <a href="#">
-                                    <svg class="crumina-icon">
-                                        <use xlink:href="#heart-icon"></use>
-                                    </svg><span class="count">Cart</span></a></div> -->
-                            <div class="featured-item-image"><a href="{{route('view.vector', $vector->id)}}">
-                                    <img src="/storage/files/{{$vector->itemImage}}" alt=""></a>
-                            </div>
-                            <div class="featured-item-info">
-                                <div class="item-category social-graphics">
-                                    Social graphics
-                                </div>
-                                <div class="title"><a href="#">{{$vector->name}}</a>
-                                </div>
-                                <div class="item-meta"><span class="avatar box-26"><a href="06-profile-page.html"><img
-                                                src="img/avatar.png" alt=""></a><span class="verified"><svg
-                                                class="crumina-icon">
-                                                <use xlink:href="#check-icon"></use>
-                                            </svg></span></span>@DexterStark</div>
-                            </div>
-                        </div>
-                        <div class="featured-item-post-content">
-                            <div class="item-rating">
-                                <span class="filled"><svg class="crumina-icon">
-                                        <use xlink:href="#star2-icon"></use>
-                                    </svg></span>
-                                <span class="filled"><svg class="crumina-icon">
-                                        <use xlink:href="#star2-icon"></use>
-                                    </svg></span>
-                                <span class="filled"><svg class="crumina-icon">
-                                        <use xlink:href="#star2-icon"></use>
-                                    </svg></span>
-                                <span class="filled"><svg class="crumina-icon">
-                                        <use xlink:href="#star2-icon"></use>
-                                    </svg></span>
-                                <span><svg class="crumina-icon">
-                                        <use xlink:href="#star2-icon"></use>
-                                    </svg></span>
-                            </div>
-                            <div class="item-price"></div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-    <!-- featured items grid -->
     <!--  items categories carousel -->
     <div class="container section-padding">
         <div class="section-title-wrapper">
@@ -365,6 +304,69 @@
         </div>
     </div>
     <!--  items categories carousel -->
+    <!-- featured items grid -->
+    <div class="container section-padding">
+        <div class="section-title-wrapper">
+            <div class="section-title"><span class="gradient-text">Newest</span> Items</div>
+            <div class="all-items-link"><a href="02-explore.html">Explore all Artworks</a></div>
+        </div>
+        <div class="featured-box">
+            <div class="featured-box-wrapper grid-4-columns">
+                @foreach ($allProducts as $product)
+                <div class="featured-item v5">
+                    <div class="featured-item-wrapper">
+                        <div class="featured-item-content">
+                            <div class="fav-counter">
+                                <a href="{{route('cart.add', $product->id)}}">
+                                    <svg class="crumina-icon">
+                                        <use xlink:href="#heart-icon"></use>
+                                    </svg><span class="count">Cart</span></a></div>
+                            <div class="featured-item-image"><a href="{{route('products.index', $product->id)}}">
+                                    <img src="img/content/items/featured-item-29.png" alt=""></a>
+                            </div>
+                            <div class="featured-item-info">
+                                <div class="item-category social-graphics">
+                                    Social graphics
+                                </div>
+                                <div class="title"><a href="#">{{$product->name}}</a>
+                                </div>
+                                <div class="item-meta"><span class="avatar box-26"><a href="06-profile-page.html"><img
+                                                src="img/avatar.png" alt=""></a><span class="verified"><svg
+                                                class="crumina-icon">
+                                                <use xlink:href="#check-icon"></use>
+                                            </svg></span></span>@DexterStark</div>
+                            </div>
+                        </div>
+                        <div class="featured-item-post-content">
+                            <div class="item-rating">
+                                <span class="filled"><svg class="crumina-icon">
+                                        <use xlink:href="#star2-icon"></use>
+                                    </svg></span>
+                                <span class="filled"><svg class="crumina-icon">
+                                        <use xlink:href="#star2-icon"></use>
+                                    </svg></span>
+                                <span class="filled"><svg class="crumina-icon">
+                                        <use xlink:href="#star2-icon"></use>
+                                    </svg></span>
+                                <span class="filled"><svg class="crumina-icon">
+                                        <use xlink:href="#star2-icon"></use>
+                                    </svg></span>
+                                <span><svg class="crumina-icon">
+                                        <use xlink:href="#star2-icon"></use>
+                                    </svg></span>
+                            </div>
+                            <div class="item-price">{{$product->price}}</div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    <!-- featured items grid -->
+    <!-- featured sellers carousel -->
+
+    <!-- featured sellers carousel -->
     <!-- become seller block -->
     <div class="section-small section-padding">
         <div class="become-seller-block">

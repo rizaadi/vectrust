@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\Vector;
 
-class HomeController extends Controller
+class OrderdesignController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +14,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $vector = Vector::take(12)->get();
+        $product = Product::take(12)->get();
         $cartItems = \Cart::session(auth()->id())->getContent();
-        // dd($cartItems);
 
-        return view('dashboard',['allVector' => $vector, 'cartItems' => $cartItems]);
+        return view('orderdesign.index',['allProducts' => $product, 'cartItems' => $cartItems]);
     }
 
     /**

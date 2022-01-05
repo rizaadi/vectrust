@@ -41,5 +41,18 @@ class VectorController extends Controller
         // }
     }
 
+    public function view($vecorid){
+
+        $cartItems = \Cart::session(auth()->id())->getContent();
+        $vector = Vector::find($vecorid);
+        $userProfile = Vector::where('vector.id',$vecorid)->join('users','vector.id_users','=','users.id')->select('users.name','users.username')->first();
+        // dd($userProfile);
+        return view('vector.index',['vector' => $vector, 'cartItems' => $cartItems, 'userProfile' => $userProfile]);
+    }
     
+    public function download($filename){
+        $tempImage = tempnam(sys_get_temp_dir(),$filename);
+        
+        return response()->download($tempImage, $filename);
+    }
 }
