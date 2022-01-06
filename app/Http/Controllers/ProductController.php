@@ -3,32 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Product $product)
+    
+    public function index(Request $request)
     {
         
-        $cartItems = \Cart::session(auth()->id())->getContent();
-        // dd(product);
-        return view('products.index',['product' => $product, 'cartItems' => $cartItems]);
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     * @param  \App\Models\Product 
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(){
+
+        $cartItems = \Cart::session(auth()->id())->getContent();
+        
+        return view('products.create',[ 'cartItems' => $cartItems]);
     }
 
     /**
@@ -37,9 +31,38 @@ class ProductController extends Controller
      * @param  \App\Http\Requests\StoreProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProductRequest $request)
+    public function store(Request $request)
     {
-        //
+        // $validator = \Validator::make($request->all(),[
+        //     'name' =>'required|string',
+        //     'description'=>'required|string',
+        //     'itemImage'=>'required|image',
+        //     'itemTags'=>'required|string',
+        //     'itemSoftware'=>'required|string'
+        // ]);
+        // if(!$validator->passes()){
+        //     return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
+        // }else {
+            $path = 'files/';
+            $file = $request->file('cover_img');
+            $file_name = time().'_'.$file->getClientOriginalName();
+
+            //    $upload = $file->storeAs($path, $file_name);
+            $upload = $file->storeAs($path, $file_name, 'public');
+            $id_users = auth()->id();
+               if($upload){
+                   Product::insert([
+                       'name'=>$request->name,
+                       'description'=>$request->description,
+                       'price'=>$request->price,
+                       'cover_img'=>$request->cover_img, 
+                        'id_users'=>$id_users,
+                        // timestamp('created_at')->useCurrent(),
+                        // timestamp('updated_at')->useCurrent(),
+                   ]);
+                   return response()->json(['code'=>1,'msg'=>'New Vector has been saved successfully']);
+                }
+        // }
     }
 
     /**
@@ -51,8 +74,8 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         $cartItems = \Cart::session(auth()->id())->getContent();
-
-        return view('products.index',compact('product','cartItems'));
+        
+        return view('products.index',['product' => $product, 'cartItems' => $cartItems]);
     }
 
     /**

@@ -385,3 +385,6 @@
     <!-- latest news -->
 </div>
 @stop
+@section('pages-style')
+
+@stop

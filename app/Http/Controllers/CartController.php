@@ -18,7 +18,7 @@ class CartController extends Controller
             'attributes' => array(),
             'associatedModel' => $product
         ));
-        return redirect()->route('cart.index');
+        return response()->json(['code'=>1,'msg'=>'Cart has been Add successfully']);
     }
     /**
      * Display a listing of the resource.

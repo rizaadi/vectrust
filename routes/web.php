@@ -27,7 +27,9 @@ Route::get('/add-to-cart/{product}', [CartController::class,'add'])->name('cart.
 Route::get('/cart', [CartController::class,'index'])->name('cart.index')->middleware('auth');
 Route::get('/cart/destroy/{itemId}', [CartController::class,'destroy'])->name('cart.destroy')->middleware('auth');
 
-Route::get('/product/{product}', [ProductController::class,'index'])->name('products.index')->middleware('auth');
+Route::get('/products/{product}', [ProductController::class,'show'])->name('products.index')->middleware('auth');
+Route::get('/product/upload',[ProductController::class,'create'])->name('products.anyar')->middleware('auth');;
+Route::post('/product/upload/store',[ProductController::class,'store'])->name('products.store')->middleware('auth');;
 
 Route::get('/profile/upload', [ProfileController::class,'uploadvector'])->name('profile.uploadvector')->middleware('auth');
 Route::post('profile/upload/save',[VectorController::class,'save'])->name('save.vector');

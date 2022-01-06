@@ -337,6 +337,9 @@
                                     <!-- <li><a href="11-profile-sales-statement.html"><svg class="crumina-icon">
                                                 <use xlink:href="#file-text-icon"></use>
                                             </svg>Sales Statement</a></li> -->
+                                    <li><a href="{{route('products.anyar')}}"><svg class="crumina-icon">
+                                                <use xlink:href="#picture-icon"></use>
+                                            </svg>Upload Service</a></li>
                                     <li><a href="{{route('profile.uploadvector')}}"><svg class="crumina-icon">
                                                 <use xlink:href="#picture-icon"></use>
                                             </svg>Upload Vector</a></li>

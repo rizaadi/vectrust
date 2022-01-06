@@ -55,4 +55,7 @@ class VectorController extends Controller
         
         return response()->download($tempImage, $filename);
     }
+    public function create(){
+        return view('products.create');
+    }
 }
