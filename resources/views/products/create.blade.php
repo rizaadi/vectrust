@@ -72,11 +72,6 @@ $(function() {
 
                 var form = this;
                 $.ajax({
-                    headers: {
-
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-
-                    }
                     url: $(form).attr('action'),
                     method: $(form).attr('method'),
                     data: new FormData(form),
@@ -88,9 +83,7 @@ $(function() {
                     },
                     success: function(data) {
                         if (data.code == 0) {
-                            $.each(data.error, function(prefix, val) {
-                                $(form).find('span.' + prefix + '_error').text(val[0]);
-                            });
+                            alert(data.msg);
                         } else {
                             $(form)[0].reset();
                             alert(data.msg);

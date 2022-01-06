@@ -9,16 +9,16 @@ class VectorController extends Controller
 {
     //
     public function save(Request $request){
-        // $validator = \Validator::make($request->all(),[
-        //     'name' =>'required|string',
-        //     'description'=>'required|string',
-        //     'itemImage'=>'required|image',
-        //     'itemTags'=>'required|string',
-        //     'itemSoftware'=>'required|string'
-        // ]);
-        // if(!$validator->passes()){
-        //     return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
-        // }else {
+        $validator = \Validator::make($request->all(),[
+            'name' =>'required|string',
+            'description'=>'required|string',
+            'itemImage'=>'required|image',
+            'itemTags'=>'required|string',
+            'itemSoftware'=>'required|string'
+        ]);
+        if(!$validator->passes()){
+            return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
+        }else {
             $path = 'files/';
                $file = $request->file('itemImage');
                $file_name = time().'_'.$file->getClientOriginalName();
@@ -35,10 +35,12 @@ class VectorController extends Controller
                        'itemFile'=>$request->itemFile,
                        'itemImage'=>$file_name,
                         'id_users'=>$id_users,
+                        'created_at' => now(),
+                        'updated_at' => now(),
                    ]);
                    return response()->json(['code'=>1,'msg'=>'New product has been saved successfully']);
                 }
-        // }
+        }
     }
 
     public function view($vecorid){

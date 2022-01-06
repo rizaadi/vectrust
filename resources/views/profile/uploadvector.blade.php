@@ -111,9 +111,7 @@ $(function() {
                     },
                     success: function(data) {
                         if (data.code == 0) {
-                            $.each(data.error, function(prefix, val) {
-                                $(form).find('span.' + prefix + '_error').text(val[0]);
-                            });
+                            alert(data.msg);
                         } else {
                             $(form)[0].reset();
                             alert(data.msg);
