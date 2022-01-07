@@ -16,6 +16,7 @@ class ProfileController extends Controller
     {
         $cartItems = \Cart::session(auth()->id())->getContent();
         $vector = Vector::all();
+        
         return view('profile.manageitem',['cartItems' => $cartItems,'vector'=>$vector]);
     }
     /**

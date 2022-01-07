@@ -7,6 +7,14 @@ use App\Models\Product;
 use Cart;
 class CartController extends Controller
 {
+    public function fetchCart(){
+
+        $cartItems = \Cart::session(auth()->id())->getContent();
+        $cartTotal = \Cart::session(auth()->id())->getTotalQuantity();
+
+        return back();
+    }
+
     public function add(Product $product)
     {
         \Cart::session(auth()->id())->add(array(
@@ -18,7 +26,7 @@ class CartController extends Controller
             'attributes' => array(),
             'associatedModel' => $product
         ));
-        return response()->json(['code'=>1,'msg'=>'Cart has been Add successfully']);
+        return back();
     }
     /**
      * Display a listing of the resource.

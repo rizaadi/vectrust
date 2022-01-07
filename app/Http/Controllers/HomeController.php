@@ -14,13 +14,30 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function indexSubs()
+    {
+        $cartItems = \Cart::session(auth()->id())->getContent();
+        // dd($vector);
+
+        return view('subs.index',['cartItems' => $cartItems,]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $vector = Vector::take(12)->get();
+        $vector = Vector::all();
+        $product = Product::all();
+        $userProfile = Vector::join('users','vector.id_users','=','users.id')->select('users.name','users.username')->first();
         $cartItems = \Cart::session(auth()->id())->getContent();
-        // dd($cartItems);
+        // dd($userProfile);
 
-        return view('dashboard',['allVector' => $vector, 'cartItems' => $cartItems]);
+        return view('dashboard',['allVector' => $vector,
+                                'cartItems' => $cartItems,
+                                'product'=> $product,
+                                'userProfile'=> $userProfile]);
     }
 
     /**

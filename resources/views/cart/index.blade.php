@@ -181,9 +181,9 @@
                         <thead>
                             <tr>
                                 <th scope="col" class="heading-label">Item details</th>
-                                <th scope="col" class="heading-label">License</th>
+                                <!-- <th scope="col" class="heading-label">License</th> -->
                                 <th scope="col" class="heading-label">Price</th>
-                                <th scope="col" class="heading-label"></th>
+                                <th scope="col" class="heading-label">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -191,11 +191,11 @@
                             <tr>
                                 <td data-label="Item details">
                                     <div class="product-info">
-                                        <div class="product-thumb"><a href="05-product.html">
-                                                <img src="img/content/previews/project-thumb-37.png" alt=""></a>
+                                        <div class="product-thumb"><a href="">
+                                                <img src="/storage/files/{{$item->associatedModel->cover_img}}" alt=""></a>
                                         </div>
                                         <div class="product-details">
-                                            <div class="product-name"><a href="05-product.html">{{$item['name']}}</a></div>
+                                            <div class="product-name"><a href="">{{$item['name']}}</a></div>
                                             <div class="product-meta">
                                                 <div class="item-category ui-templates">UI TEMPLATES</div>
                                                 <div class="product-seller">
@@ -207,7 +207,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td data-label="License">
+                                <!-- <td data-label="License">
                                     <form>
                                         <select class="select-nice">
                                             <option value="regular">Regular</option>
@@ -215,8 +215,8 @@
                                             <option value="extended">Extended</option>
                                         </select>
                                     </form>
-                                </td>
-                                <td data-label="price" class="price">{{$item['price']}}</td>
+                                </td> -->
+                                <td data-label="price" class="price">IDR.{{$item['price']}}</td>
                                 <td><a href="{{ route('cart.destroy', $item['id']) }}"><button class="close"><svg class="crumina-icon">
                                             <use xlink:href="#close-circle-icon"></use>
                                         </svg></button></a></td>
@@ -224,20 +224,20 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="discount-section">
+                    <!-- <div class="discount-section">
                         <form class="cryptoki-form" id="discount-form">
                             <span class="label">Redeem Code</span>
                             <input type="text" placeholder="CRYP1258OFF">
                             <button class="btn btn-normal btn-dark" type="submit">Redeem!</button>
                         </form>
-                    </div>
+                    </div> -->
                 </div>
                 <!--    cart total box -->
                 <aside>
                     <div class="cart-total-box">
                         <div class="cart-total-wrapper">
                             <div class="small-title">Order Total</div>
-                            <div class="total-price">{{\Cart::session(auth()->id())->getTotal()}}</div>
+                            <div class="total-price">IDR.{{\Cart::session(auth()->id())->getTotal()}}</div>
                             <!-- <div class="total-price-details">
                                 <div class="field">
                                     <div class="label">Cart</div>

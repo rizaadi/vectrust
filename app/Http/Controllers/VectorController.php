@@ -52,8 +52,9 @@ class VectorController extends Controller
         return view('vector.index',['vector' => $vector, 'cartItems' => $cartItems, 'userProfile' => $userProfile]);
     }
     
-    public function download($filename){
+    public function download($idv,$filename){
         $tempImage = tempnam(sys_get_temp_dir(),$filename);
+        $vector = Vector::find($idv)->increment('itemDownload');
         
         return response()->download($tempImage, $filename);
     }

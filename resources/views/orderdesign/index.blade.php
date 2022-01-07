@@ -320,10 +320,12 @@
                                 <a href="{{route('cart.add', $product->id)}}">
                                     <svg class="crumina-icon">
                                         <use xlink:href="#heart-icon"></use>
-                                    </svg><span class="count">Cart</span></a></div>
+                                    </svg><span class="count">Cart</span>
+                                </div>
                             <div class="featured-item-image"><a href="{{route('products.index', $product->id)}}">
-                                    <img src="img/content/items/featured-item-29.png" alt=""></a>
+                                    <img src="/storage/files/{{$product->cover_img}}" alt="">
                             </div>
+                            </a>
                             <div class="featured-item-info">
                                 <div class="item-category social-graphics">
                                     Social graphics
@@ -380,11 +382,42 @@
         </div>
     </div>
     <!-- become seller block -->
-    <!-- latest news -->
-
-    <!-- latest news -->
 </div>
 @stop
-@section('pages-style')
+@section('page-style')
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.fav-counterz').on('click', function () {
+            // e.preventDefault(); 
+            let idv = $(this).data('id');
+            if (confirm('Are you sure you want to delete this vector ?')) {
+                $.ajax({
+                    cache: false,
+                    type:"GET",
+                    url:"/add-to-cart/"+idv,
+                    typeData: "json",
+                    success:function(data){
+                        if (data.code == 1) {
+                        alert('adfhjak');
+                    }else{
+                        fetchAllCart()
+                        
+                        alert(data.msg);
+                        $("span.counter").val(data);
+                    }
+                }
+                })
+                
+            }
+        });
+        fetchAllCart() 
+        function fetchAllCart() {
+                $.get('{{route("fetch.cart")}}', {}, function(data) {
+                    console.log(data.cartTotal);
+                    $('#countercartt').val(data.cartTotal);
+                }, 'json');
+            }
+    });
 
+</script>
 @stop

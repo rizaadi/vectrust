@@ -85,7 +85,7 @@
                         </div>
                     </div>
                     <div>
-                        <a href="{{route('download.vector',$vector->itemImage)}}"><button class="btn btn-fullwidth  gradient-background" type="submit">DOWNLOAD</button></a>
+                        <a href="{{route('download.vector',[$vector->id,$vector->itemImage])}}"><button class="btn btn-fullwidth  gradient-background" type="submit">DOWNLOAD</button></a>
                     </div>
                     <div class="product-details">
                         <div class="small-title">Item details</div>
@@ -116,7 +116,7 @@
                             </div>
                             <div class="seller-meta">
                                 <div class="seller-name">
-                                    <div class="name"><a href="06-profile-page.html">{{$userProfile->name}}</a></div>
+                                    <div class="name"><a href="">{{$userProfile->name}}</a></div>
                                     <div class="meta gradient-text">@ {{$userProfile->username}}</div>
                                 </div>
                                 <div class="seller-buttons">

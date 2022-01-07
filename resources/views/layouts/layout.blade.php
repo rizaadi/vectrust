@@ -206,7 +206,7 @@
                     <!-- mobile panel burger icon -->
                     <!-- header logo -->
                     <div class="logo">
-                        <a class="logo-link" href="01-home-ds.html">
+                        <a class="logo-link" href="/dashboard">
                             <!-- <div class="logo-img"><img src="svg/logo-ds.svg" alt="logo"></div> -->
                             <div class="logo-text">Vectrust</div>
                         </a>
@@ -216,8 +216,8 @@
                     <ul class="navigation-menu">
                         <li class="menu-item"><a class="menu-link" href="/dashboard">Home</a></li>
                         <li class="menu-item"><a class="menu-link" href="{{route('orderdesign')}}">Order Design
-                        <li class="menu-item"><a class="menu-link" href="07-sellers.html">Forum</a></li>
-                        <li class="menu-item"><a class="menu-link" href="#">About Us</a></li>
+                        <!-- <li class="menu-item"><a class="menu-link" href="07-sellers.html">Forum</a></li> -->
+                        <li class="menu-item"><a class="menu-link" href="{{route('index.subs')}}">About Us</a></li>
                         </ul>
                     <!--  navigation menu -->
                 </div>
@@ -234,7 +234,11 @@
                         <!-- cart button -->
                         <div class="cart-button-cont">
                         <button class="cart-button cryptoki-notif-bttn" data-target="cart-dropdown">
-                            <span class="counter">{{Cart::session(auth()->id())->getTotalQuantity()}}</span>
+                            <span class="counter">@auth
+                                        {{Cart::session(auth()->id())->getContent()->count()}}
+                                        @else
+                                        0
+                                        @endauth</span>
                             <svg class="crumina-icon">
                                 <use xlink:href="#bag-icon"></use>
                             </svg>
@@ -248,13 +252,14 @@
                                         @endauth</span>
                                 </div>
                                 <div class="cart-wrapper">
-                                    @foreach ($cartItems as $item)
+                                    
+                                    @foreach ($cartItems as $key => $item)
                                     <div class="cart-product">
-                                        <div class="thumb-box"><a href="05-product.html"><img src="{{asset('img/content/notifications/notif-thumb-1.png')}}"
+                                        <div class="thumb-box"><a href=""><img src="/storage/files/{{$item->associatedModel->cover_img}}"
                                                 alt=""></a></div>
                                         <div class="purchase-info">
                                             <div class="product-info">
-                                                <div class="product-title"><a href="05-product.html">{{$item['name']}}</a>
+                                                <div class="product-title"><a href="">{{$item['name']}}</a>
                                                 </div>
                                                 <div class="product-price">{{$item['price']}}</div>
                                             </div>
@@ -401,7 +406,7 @@
                 <div class="footer-content">
                     <div class="footer-row flex-space-between align-items-center">
                         <div class="logo">
-                            <a class="logo-link" href="01-home-ds.html">
+                            <a class="logo-link" href="/dashboard">
                                 <!-- <div class="logo-img"><img src="svg/logo-ds.svg" alt="logo"></div> -->
                                 <div class="logo-text">Vectrust</div>
                             </a>
@@ -415,7 +420,7 @@
                                     </svg></a></li> -->
                             <li class="social-icon"><a href="#"><svg class="crumina-icon">
                                         <use xlink:href="#instagram-icon"></use>
-                                    </svg></a></li>
+                                    </svg> vectrust</a></li>
                             <!-- <li class="social-icon"><a href="#"><svg class="crumina-icon">
                                         <use xlink:href="#twitch-icon"></use>
                                     </svg></a></li>
@@ -423,75 +428,6 @@
                                         <use xlink:href="#discord-icon"></use>
                                     </svg></a></li> -->
                         </ul>
-                    </div>
-                    <div class="footer-row flex-space-between flex-wrap">
-                        <div class="footer-column">
-                            <div class="footer-widget">
-                                <div class="widget-title">Vectrust Market</div>
-                                <div class="widget-content flex-space-between">
-                                    <div class="is-two-col-element">
-                                        <ul class="footer-menu">
-                                            <li class="menu-item"><a class="menu-link" href="/dashboard">Home</a>
-                                            </li>
-                                            <li class="menu-item"><a class="menu-link"
-                                                    href="02-explore.html">Explore</a></li>
-                                        </ul>
-                                        <ul class="footer-menu">
-                                            <li class="menu-item"><a class="menu-link"
-                                                    href="06-profile-page.html">Profile page</a></li>
-                                            <li class="menu-item"><a class="menu-link"
-                                                    href="03-shop-category.html">Shop</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="is-two-col-element">
-                                        <ul class="footer-menu">
-                                            <li class="menu-item"><a class="menu-link"
-                                                    href="07-sellers.html">Sellers</a></li>
-                                            <li class="menu-item"><a class="menu-link" href="05-product.html">Product
-                                                    Page</a></li>
-                                        </ul>
-                                        <ul class="footer-menu">
-                                            <li class="menu-item"><a class="menu-link" href="23-login.html">Login &
-                                                    Register</a>
-                                            </li>
-                                            <li class="menu-item"><a class="menu-link"
-                                                    href="20-become-a-creator.html">Become a Seller</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-column">
-                            <div class="footer-widget">
-                                <div class="widget-title">Explore</div>
-                                <div class="is-two-col-element">
-                                    <ul class="footer-menu">
-                                        <li class="menu-item"><a class="menu-link" href="%21.html#">UI Templates</a></li>
-                                        <li class="menu-item"><a class="menu-link" href="%21.html#">Coded Templates</a></li>
-                                    </ul>
-                                    <ul class="footer-menu">
-                                        <li class="menu-item"><a class="menu-link" href="%21.html#">Social Graphics</a></li>
-                                        <li class="menu-item"><a class="menu-link" href="%21.html#">Video Tutorials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-column">
-                            <div class="footer-widget">
-                                <div class="widget-title">Helpful Links</div>
-                                <div class="is-two-col-element">
-                                    <ul class="footer-menu">
-                                        <li class="menu-item"><a class="menu-link" href="17-blog-classic.html">Our
-                                                Blog</a></li>
-                                        <li class="menu-item"><a class="menu-link" href="21-contact.html">Contact</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="footer-menu">
-                                        <li class="menu-item"><a class="menu-link" href="22-faq.html">FAQs</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <!--  footer content -->

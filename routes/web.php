@@ -26,6 +26,7 @@ Route::get('/orderdesign', [OrderdesignController::class,'index'])->name('orderd
 Route::get('/add-to-cart/{product}', [CartController::class,'add'])->name('cart.add')->middleware('auth');
 Route::get('/cart', [CartController::class,'index'])->name('cart.index')->middleware('auth');
 Route::get('/cart/destroy/{itemId}', [CartController::class,'destroy'])->name('cart.destroy')->middleware('auth');
+Route::get('/fetchcart', [CartController::class,'fetchCart'])->name('fetch.cart')->middleware('auth');
 
 Route::get('/products/{product}', [ProductController::class,'show'])->name('products.index')->middleware('auth');
 Route::get('/product/upload',[ProductController::class,'create'])->name('products.anyar')->middleware('auth');;
@@ -39,8 +40,10 @@ Route::get('profile/editvector/{id}',[ProfileController::class,'editVector'])->n
 Route::post('profile/storevector',[ProfileController::class,'storeVector'])->name('store.vector');
 Route::post('profile/deletevector',[ProfileController::class,'deleteVector'])->name('delete.vector');
 
-Route::get('/download/{filename}',[VectorController::class,'download'])->name('download.vector');
+Route::get('/download/{idv}/{filename}',[VectorController::class,'download'])->name('download.vector');
 Route::get('/vector/{vectorId}',[VectorController::class,'view'])->name('view.vector');
+
+Route::get('/subscribe',[HomeController::class,'indexSubs'])->name('index.subs');
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');

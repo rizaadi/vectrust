@@ -274,7 +274,7 @@
                                                 src="img/avatar.png" alt=""></a><span class="verified"><svg
                                                 class="crumina-icon">
                                                 <use xlink:href="#check-icon"></use>
-                                            </svg></span></span>@DexterStark</div>
+                                            </svg></span></span>&#64;{{$userProfile->username}}</div>
                             </div>
                         </div>
                         <div class="featured-item-post-content">
