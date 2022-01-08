@@ -32,7 +32,9 @@ Route::get('/products/{product}', [ProductController::class,'show'])->name('prod
 Route::get('/product/upload',[ProductController::class,'create'])->name('products.anyar')->middleware('auth');;
 Route::post('/product/upload/store',[ProductController::class,'store'])->name('products.store')->middleware('auth');;
 
-Route::get('/profile/upload', [ProfileController::class,'uploadvector'])->name('profile.uploadvector')->middleware('auth');
+Route::group(['middleware' => ['role:creator']], function () {
+    Route::get('/profile/upload', [ProfileController::class,'uploadvector'])->name('profile.uploadvector')->middleware('auth');
+});
 Route::post('profile/upload/save',[VectorController::class,'save'])->name('save.vector');
 Route::get('profile/fetchvector',[ProfileController::class,'indexManage'])->name('fetch.vector');
 Route::get('profile/manage',[ProfileController::class,'indexManage'])->name('manage.index');

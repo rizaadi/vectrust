@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 
-    
+
     <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="stylesheet" href="{{asset('css/fonts.css')}}">
@@ -35,14 +35,15 @@
         <!-- header -->
         <header>
             <!-- topbar section -->
-            
+
             <!-- topbar section -->
         </header>
         <!-- header -->
         <!-- mobile navigation panel -->
         <div class="mobile-nav-panel">
             <div class="mobile-nav-header">
-                <div class="mobile-menu-logo logo"><a href="/dashboard"><img src="{{asset('svg/logo-ds.svg')}}" alt="logo"></a>
+                <div class="mobile-menu-logo logo"><a href="/dashboard"><img src="{{asset('svg/logo-ds.svg')}}"
+                            alt="logo"></a>
                 </div>
                 <svg class="crumina-icon close-icon">
                     <use xlink:href="#cross-icon"></use>
@@ -52,7 +53,8 @@
                 <!-- mobile menu -->
                 <ul class="mobile-menu">
                     <li class="menu-item"><a class="menu-link" href="/dashboard">Home</a></li>
-                    <li class="menu-item menu-item-has-children"><a class="menu-link" href="{{route('orderdesign')}}">Order Design
+                    <li class="menu-item menu-item-has-children"><a class="menu-link"
+                            href="{{route('orderdesign')}}">Order Design
                     <li class="menu-item"><a class="menu-link" href="07-sellers.html">Forum</a></li>
                     <li class="menu-item menu-item-has-megamenu menu-item-has-children"><a class="menu-link"
                             href="#">All pages<span class="indicator"><svg class="crumina-icon">
@@ -102,7 +104,8 @@
                                             <li class="menu-item"><a href="26-profile-info.html"
                                                     class="menu-link">Profile Info</a>
                                             </li>
-                                            <li class="menu-item"><a href="%21.html#" class="menu-link">Account Settings</a>
+                                            <li class="menu-item"><a href="%21.html#" class="menu-link">Account
+                                                    Settings</a>
                                             </li>
                                             <li class="menu-item"><a href="%21.html#" class="menu-link">Notification
                                                     Settings</a></li>
@@ -216,9 +219,9 @@
                     <ul class="navigation-menu">
                         <li class="menu-item"><a class="menu-link" href="/dashboard">Home</a></li>
                         <li class="menu-item"><a class="menu-link" href="{{route('orderdesign')}}">Order Design
-                        <!-- <li class="menu-item"><a class="menu-link" href="07-sellers.html">Forum</a></li> -->
+                                <!-- <li class="menu-item"><a class="menu-link" href="07-sellers.html">Forum</a></li> -->
                         <li class="menu-item"><a class="menu-link" href="{{route('index.subs')}}">About Us</a></li>
-                        </ul>
+                    </ul>
                     <!--  navigation menu -->
                 </div>
                 <div class="nav-right-hand-part">
@@ -233,16 +236,16 @@
                         <!-- user mobile search button -->
                         <!-- cart button -->
                         <div class="cart-button-cont">
-                        <button class="cart-button cryptoki-notif-bttn" data-target="cart-dropdown">
-                            <span class="counter">@auth
-                                        {{Cart::session(auth()->id())->getContent()->count()}}
-                                        @else
-                                        0
-                                        @endauth</span>
-                            <svg class="crumina-icon">
-                                <use xlink:href="#bag-icon"></use>
-                            </svg>
-                        </button>
+                            <button class="cart-button cryptoki-notif-bttn" data-target="cart-dropdown">
+                                <span class="counter">@auth
+                                    {{Cart::session(auth()->id())->getContent()->count()}}
+                                    @else
+                                    0
+                                    @endauth</span>
+                                <svg class="crumina-icon">
+                                    <use xlink:href="#bag-icon"></use>
+                                </svg>
+                            </button>
                             <div id="cart-dropdown" class="cryptoki-notif-target">
                                 <div class="title">
                                     Your Cart <span class="colored">@auth
@@ -252,11 +255,12 @@
                                         @endauth</span>
                                 </div>
                                 <div class="cart-wrapper">
-                                    
+
                                     @foreach ($cartItems as $key => $item)
                                     <div class="cart-product">
-                                        <div class="thumb-box"><a href=""><img src="/storage/files/{{$item->associatedModel->cover_img}}"
-                                                alt=""></a></div>
+                                        <div class="thumb-box"><a href=""><img
+                                                    src="/storage/files/{{$item->associatedModel->cover_img}}"
+                                                    alt=""></a></div>
                                         <div class="purchase-info">
                                             <div class="product-info">
                                                 <div class="product-title"><a href="">{{$item['name']}}</a>
@@ -291,7 +295,7 @@
                         </div> -->
                         <!-- favourites buttons -->
                         <!--  notifications dropdown -->
-                        
+
                         <!--  notifications dropdown -->
                     </div>
                     <!-- user activity buttons -->
@@ -302,7 +306,8 @@
                             <div class="user_score"></div>
                         </div>
                         <div class="avatar box-42">
-                            <img src="{{asset('img/avatar.png')}}" alt="avatar"><span class="verified"><svg class="crumina-icon">
+                            <img src="{{asset('img/avatar.png')}}" alt="avatar"><span class="verified"><svg
+                                    class="crumina-icon">
                                     <use xlink:href="#check-icon"></use>
                                 </svg></span>
                         </div>
@@ -330,18 +335,10 @@
                                     <li><a href="26-profile-info.html"><svg class="crumina-icon">
                                                 <use xlink:href="#user-icon"></use>
                                             </svg>Profile Info</a></li>
-                                    <!-- <li><a href="%21.html#"><svg class="crumina-icon">
-                                                <use xlink:href="#settings-icon"></use>
-                                            </svg>Account Settings</a></li>
-                                    <li><a href="%21.html#"><svg class="crumina-icon">
-                                                <use xlink:href="#slide-filter-icon"></use>
-                                            </svg>Notification Settings</a></li> -->
-                                    <li><a href="10-profile-dashboard.html"><svg class="crumina-icon">
+                                    <li><a href=""><svg class="crumina-icon">
                                                 <use xlink:href="#dashboard-icon"></use>
                                             </svg>Dashboard</a></li>
-                                    <!-- <li><a href="11-profile-sales-statement.html"><svg class="crumina-icon">
-                                                <use xlink:href="#file-text-icon"></use>
-                                            </svg>Sales Statement</a></li> -->
+                                    @role('creator')
                                     <li><a href="{{route('products.anyar')}}"><svg class="crumina-icon">
                                                 <use xlink:href="#picture-icon"></use>
                                             </svg>Upload Service</a></li>
@@ -351,18 +348,18 @@
                                     <li><a href="{{route('manage.index')}}"><svg class="crumina-icon">
                                                 <use xlink:href="#picture-icon"></use>
                                             </svg>Manage Items</a></li>
-                                    <!-- <li><a href="14-profile-payment-history.html"><svg class="crumina-icon">
-                                                <use xlink:href="#dollar-icon"></use>
-                                            </svg>Payouts</a></li>
-                                    <li><a href="15-profile-purchases.html"><svg class="crumina-icon">
-                                                <use xlink:href="#wallet-icon"></use>
-                                            </svg>Purchases</a></li> -->
+                                    @endrole
                                     <li><a href="%21.html#"><svg class="crumina-icon">
                                                 <use xlink:href="#circle-checked-icon"></use>
                                             </svg>Get Verified</a></li>
-                                    <li class="logout"><a href="%21.html#"><svg class="crumina-icon">
-                                                <use xlink:href="#logout-icon"></use>
-                                            </svg>Log Out</a></li>
+                                    <form id="form1" method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <li><a href="javascript:;"
+                                                onclick="document.getElementById('form1').submit();"><svg
+                                                    class="crumina-icon">
+                                                    <use xlink:href="#logout-icon"></use>
+                                                </svg>logout</a></li>
+                                    </form>
                                 </ul>
                             </div>
                             <div class="profile-dropdown-footer">
@@ -383,8 +380,8 @@
             </div>
             <!-- header search block -->
             <div id="mobile-search-block">
-                <form  id="mobile-search-form">
-                    <input type="text" class="search-input"   placeholder="Enter your search here...">
+                <form id="mobile-search-form">
+                    <input type="text" class="search-input" placeholder="Enter your search here...">
                     <button class="search-button">
                         <svg class="crumina-icon">
                             <use xlink:href="#search-icon"></use>
@@ -401,7 +398,7 @@
         <footer class="footer footer-margin">
             <div class="footer-wrapper container">
                 <!-- subscribe widget v2 -->
-                
+
                 <!--  footer content -->
                 <div class="footer-content">
                     <div class="footer-row flex-space-between align-items-center">
@@ -449,12 +446,12 @@
 
     @yield('page-style')
     <!-- Add your site or application content here -->
-  <script defer src="{{asset('js/swiper-bundle.min.js')}}"></script>
-  <script defer src="{{asset('js/main.js')}}"></script>
-  <script defer src="{{asset('js/countdown.js')}}"></script>
-  <script defer src="{{asset('js/waves.min.js')}}"></script>
-  <script async src="{{asset('js/svg-loader.js')}}"></script>
-  <script defer src="{{asset('js/nice-select2.js')}}"></script>
+    <script defer src="{{asset('js/swiper-bundle.min.js')}}"></script>
+    <script defer src="{{asset('js/main.js')}}"></script>
+    <script defer src="{{asset('js/countdown.js')}}"></script>
+    <script defer src="{{asset('js/waves.min.js')}}"></script>
+    <script async src="{{asset('js/svg-loader.js')}}"></script>
+    <script defer src="{{asset('js/nice-select2.js')}}"></script>
 
 
 </body>
