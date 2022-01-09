@@ -100,24 +100,8 @@
                     <div class="product-purchase-info">
                         <form class="cryptoki-form" id="purchase-form">
                             <div class="product-price">
-                                <div class="price">{{$product->price}}</div>
-                                <div class="label">one time payment</div>
-                            </div>
-                            <div class="pricing-plans">
-                                <div class="plan">
-                                    <input type="radio" name="license-type" id="regular">
-                                    <label for="regular">Regular License</label>
-                                    <div class="license-description">Here’s a small explanation about what you can do
-                                        with this <a href="#">regular license</a> and fair use. </div>
-                                </div>
-                                <div class="plan">
-                                    <input type="radio" name="license-type" id="commercial">
-                                    <label for="commercial">Commercial License</label>
-                                </div>
-                                <div class="plan">
-                                    <input type="radio" name="license-type" id="extended">
-                                    <label for="extended">Extended License</label>
-                                </div>
+                                <div class="price">IDR.{{$product->price}}</div>
+                                <div class="label"></div>
                             </div>
                             <button class="btn btn-fullwidth  gradient-background" type="submit">Buy
                                 Now!</button>
@@ -140,26 +124,10 @@
                             <ul class="details-title">
                                 <li>Published</li>
                                 <li>Updated</li>
-                                <li>Files included</li>
-                                <li>Software</li>
-                                <li>Size</li>
-                                <li>Tags</li>
                             </ul>
                             <ul class="details-value">
                                 <li>{{$product->created_at->format('m/d/Y')}}</li>
                                 <li>{{$product->updated_at->format('m/d/Y')}}</li>
-                                <li>PSD, PNG</li>
-                                <li>Photoshop CS6</li>
-                                <li>12MB</li>
-                                <li class="tags-list"><span class="colored"><a href="#">social</a></span>, <span
-                                        class="colored"><a href="#">twitter</a></span>, <span class="colored"><a
-                                            href="#">header</a></span>,
-                                    <span class="colored"><a href="#">banner</a></span>, <span class="colored"><a
-                                            href="#">gaming</a></span>, <span class="colored"><a
-                                            href="#">streamer</a></span>,
-                                    <span class="colored"><a href="#">gamer</a></span>, <span class="colored"><a
-                                            href="#">live</a></span>
-                                </li>
                             </ul>
                         </div>
                     </div>

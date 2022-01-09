@@ -330,9 +330,9 @@
                                 <div class="item-category social-graphics">
                                     Social graphics
                                 </div>
-                                <div class="title"><a href="#">{{$product->name}}</a>
+                                <div class="title"><a href="{{route('products.index', $product->id)}}">{{$product->name}}</a>
                                 </div>
-                                <div class="item-meta"><span class="avatar box-26"><a href="06-profile-page.html"><img
+                                <div class="item-meta"><span class="avatar box-26"><a href="#"><img
                                                 src="img/avatar.png" alt=""></a><span class="verified"><svg
                                                 class="crumina-icon">
                                                 <use xlink:href="#check-icon"></use>

@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{asset('css/swiper-bundle.css')}}">
     <link rel="stylesheet" href="{{asset('css/nice-select2.css')}}">
     <!-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> -->
+    @yield('media')
 
     <script src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
     <meta name="theme-color" content="#fafafa">
