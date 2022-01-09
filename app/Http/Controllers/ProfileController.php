@@ -12,6 +12,18 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function dashboard(Request $request)
+    {
+        $cartItems = \Cart::session(auth()->id())->getContent();
+        $vector = Vector::where('vector.id_users',auth()->id())->get();
+        // dd($vector);
+        return view('profile.dashboard',['cartItems' => $cartItems,'vector' => $vector]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function indexManage()
     {
         $cartItems = \Cart::session(auth()->id())->getContent();

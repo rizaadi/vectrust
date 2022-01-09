@@ -21,7 +21,7 @@
             @endrole
             <li><a href=""><svg class="crumina-icon">
                         <use xlink:href="#circle-checked-icon"></use>
-                    </svg>Get Verified</a></li>
+                    </svg>Get Verified Creator</a></li>
             <!-- Authentication -->
             <form id="form1" method="POST" action="{{ route('logout') }}">
                 @csrf

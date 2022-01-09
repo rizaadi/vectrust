@@ -50,29 +50,29 @@
         </div>
         <div class="featured-carousel">
             <div class="swiper-wrapper">
+                @foreach($allVector as $v)
                 <div class="swiper-slide">
                     <div class="featured-item v5">
                         <div class="featured-item-wrapper">
                             <div class="featured-item-content">
                                 <div class="fav-counter"><svg class="crumina-icon">
                                         <use xlink:href="#heart-icon"></use>
-                                    </svg><span class="count">22</span></div>
+                                    </svg><span class="count">{{$v->itemDownload}}</span></div>
                                 <div class="featured-item-image">
-                                    <a href="06-profile-page.html">
-                                        <img src="img/content/items/featured-item-25.png" alt=""></a>
+                                    <a href="{{route('view.vector', $v->id)}}">
+                                        <img src="/storage/files/{{$v->itemImage}}" alt=""></a>
                                 </div>
                                 <div class="featured-item-info">
                                     <div class="item-category ui-templates">
-                                        UI templates
+                                        {{$v->category}}
                                     </div>
-                                    <div class="title"><a href="05-product.html">Cryptoki - NFT and Digital
-                                            Market...</a>
+                                    <div class="title"><a href="{{route('view.vector', $v->id)}}">{{$v->name}}</a>
                                     </div>
                                     <div class="item-meta"><span class="avatar box-26"><a
                                                 href="06-profile-page.html"><img src="img/avatar.png" alt=""></a><span
                                                 class="verified"><svg class="crumina-icon">
                                                     <use xlink:href="#check-icon"></use>
-                                                </svg></span></span>@DexterStark</div>
+                                                </svg></span></span>&#64;{{$userProfile->username}}</div>
                                 </div>
                             </div>
                             <div class="featured-item-post-content">
@@ -93,152 +93,11 @@
                                             <use xlink:href="#star2-icon"></use>
                                         </svg></span>
                                 </div>
-                                <div class="item-price">$12.00</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="featured-item v5">
-                        <div class="featured-item-wrapper">
-                            <div class="featured-item-content">
-                                <div class="fav-counter"><svg class="crumina-icon">
-                                        <use xlink:href="#heart-icon"></use>
-                                    </svg><span class="count">22</span></div>
-                                <div class="featured-item-image">
-                                    <a href="06-profile-page.html">
-                                        <img src="img/content/items/featured-item-26.png" alt=""></a>
-                                </div>
-                                <div class="featured-item-info">
-                                    <div class="item-category coded-templates">
-                                        Coded templates
-                                    </div>
-                                    <div class="title"><a href="05-product.html">Olympus HTML - Social
-                                            Networking...</a></div>
-                                    <div class="item-meta"><span class="avatar box-26"><a
-                                                href="06-profile-page.html"><img src="img/avatar-2.png" alt=""></a><span
-                                                class="verified"><svg class="crumina-icon">
-                                                    <use xlink:href="#check-icon"></use>
-                                                </svg></span></span>@JackieJ</div>
-                                </div>
-                            </div>
-                            <div class="featured-item-post-content">
-                                <div class="item-rating">
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                </div>
-                                <div class="item-price">$24.00</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="featured-item v5">
-                        <div class="featured-item-wrapper">
-                            <div class="featured-item-content">
-                                <div class="fav-counter"><svg class="crumina-icon">
-                                        <use xlink:href="#heart-icon"></use>
-                                    </svg><span class="count">68</span></div>
-                                <div class="featured-item-image">
-                                    <a href="06-profile-page.html">
-                                        <img src="img/content/items/featured-item-27.png" alt=""></a>
-                                </div>
-                                <div class="featured-item-info">
-                                    <div class="item-category social-graphics">
-                                        Social graphics
-                                    </div>
-                                    <div class="title"><a href="05-product.html">Twitter Gaming Headers Pack
-                                            04</a></div>
-                                    <div class="item-meta"><span class="avatar box-26"><a
-                                                href="06-profile-page.html"><img src="img/avatar.png" alt=""></a><span
-                                                class="verified"><svg class="crumina-icon">
-                                                    <use xlink:href="#check-icon"></use>
-                                                </svg></span></span>@DexterStark</div>
-                                </div>
-                            </div>
-                            <div class="featured-item-post-content">
-                                <div class="item-rating">
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                </div>
-                                <div class="item-price">$8.00</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="featured-item v5">
-                        <div class="featured-item-wrapper">
-                            <div class="featured-item-content">
-                                <div class="fav-counter"><svg class="crumina-icon">
-                                        <use xlink:href="#heart-icon"></use>
-                                    </svg><span class="count">22</span></div>
-                                <div class="featured-item-image">
-                                    <a href="06-profile-page.html">
-                                        <img src="img/content/items/featured-item-28.png" alt=""></a>
-                                </div>
-                                <div class="featured-item-info">
-                                    <div class="item-category video-tutorials">
-                                        Video tutorials
-                                    </div>
-                                    <div class="title"><a href="05-product.html">Add Video Reviews to your
-                                            Theme!</a></div>
-                                    <div class="item-meta"><span class="avatar box-26"><a
-                                                href="06-profile-page.html"><img src="img/avatar-8.png" alt=""></a><span
-                                                class="verified"><svg class="crumina-icon">
-                                                    <use xlink:href="#check-icon"></use>
-                                                </svg></span></span>@beardedwndr</div>
-                                </div>
-                            </div>
-                            <div class="featured-item-post-content">
-                                <div class="item-rating">
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                </div>
-                                <div class="item-price">$17.00</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -268,10 +127,10 @@
                                 <div class="item-category social-graphics">
                                     Social graphics
                                 </div>
-                                <div class="title"><a href="#">{{$vector->name}}</a>
+                                <div class="title"><a href="{{route('view.vector', $vector->id)}}">{{$vector->name}}</a>
                                 </div>
                                 <div class="item-meta"><span class="avatar box-26"><a href="06-profile-page.html"><img
-                                                src="img/avatar.png" alt=""></a><span class="verified"><svg
+                                                src="{{ Auth::user()->profile_photo_url }}" alt=""></a><span class="verified"><svg
                                                 class="crumina-icon">
                                                 <use xlink:href="#check-icon"></use>
                                             </svg></span></span>&#64;{{$userProfile->username}}</div>

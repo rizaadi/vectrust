@@ -30,7 +30,7 @@ class HomeController extends Controller
     {
         $vector = Vector::all();
         $product = Product::all();
-        $userProfile = Vector::join('users','vector.id_users','=','users.id')->select('users.name','users.username')->first();
+        $userProfile = Vector::join('users','vector.id_users','=','users.id')->select('users.name','users.username','users.profile_photo_path')->first();
         $cartItems = \Cart::session(auth()->id())->getContent();
         // dd($userProfile);
 

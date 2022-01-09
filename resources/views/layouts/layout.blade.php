@@ -306,7 +306,8 @@
                             <div class="user_score"></div>
                         </div>
                         <div class="avatar box-42">
-                            <img src="{{asset('img/avatar.png')}}" alt="avatar"><span class="verified"><svg
+                            <img src="{{ Auth::user()->profile_photo_url }}" alt="avatar">
+                            <span class="verified"><svg
                                     class="crumina-icon">
                                     <use xlink:href="#check-icon"></use>
                                 </svg></span>
