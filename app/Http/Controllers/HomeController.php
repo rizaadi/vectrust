@@ -18,7 +18,6 @@ class HomeController extends Controller
     {
         $cartItems = \Cart::session(auth()->id())->getContent();
         // dd($vector);
-
         return view('subs.index',['cartItems' => $cartItems,]);
     }
     /**

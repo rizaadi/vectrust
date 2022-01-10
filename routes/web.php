@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VectorController;
 use App\Http\Controllers\OrderdesignController;
+use App\Http\Controllers\Checkout\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,9 @@ Route::get('/download/{idv}/{filename}',[VectorController::class,'download'])->n
 Route::get('/vector/{vectorId}',[VectorController::class,'view'])->name('view.vector');
 
 Route::get('/subscribe',[HomeController::class,'indexSubs'])->name('index.subs');
+
+Route::get('/try-checkout', [CheckoutController::class,'onSubmit'])->name('index.checkout');
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');

@@ -236,7 +236,8 @@
                 <div class="cart-total-box">
                     <div class="cart-total-wrapper">
                         <div class="small-title">Order Total</div>
-                        <div id="total" class="total-price">IDR.{{\Cart::session(auth()->id())->getTotal()}}</div>
+                        <div class="total-price">IDR.{{\Cart::session(auth()->id())->getTotal()}}</div>
+                        <input type="hidden" name="totalp" value="{{\Cart::session(auth()->id())->getTotal()}}">
                         <!-- <div class="total-price-details">
                                 <div class="field">
                                     <div class="label">Cart</div>
@@ -266,6 +267,5 @@
 @endsection
 @section('page-style')
 <!-- Javascripts -->
-<script src="/js/data-cart.js"></script>
 <script src="/js/checkout.js"></script>
 @endsection
