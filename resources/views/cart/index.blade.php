@@ -233,6 +233,7 @@
         <!--    cart total box -->
         <aside>
             <form id="form-configure" class="form-configure" autocomplete="off">
+                @csrf
                 <div class="cart-total-box">
                     <div class="cart-total-wrapper">
                         <div class="small-title">Order Total</div>

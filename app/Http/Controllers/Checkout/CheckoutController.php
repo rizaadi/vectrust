@@ -20,22 +20,24 @@ class CheckoutController extends Controller
     }
 
 
-    public function create(Request $req) {
+    public function create(Request $request) {
         $service = new Service();
         $date = new \DateTime();
-        $userid = auth()->user()->id;
-        $cartItems = \Cart::session($userid)->getTotal();
+        $userid = $request->user();
+        dd($userid);
+        // // // var_dump($userid);
+        // $cartItems = \Cart::session($userid)->getTotal();
         $redirectUrl = '';
         $para = [
-            'external_id' => $req->name.'-' . $date->getTimestamp(),
-            'amount'=> $cartItems,
+            'external_id' => $request->name.'-' . $date->getTimestamp(),
+            'amount'=> 5000,
             'payer_email' => 'invoice+demo@xendit.co', 
-            'description' => $req->totalp,
+            'description' => $request->totalp,
             'failure_redirect_url' => $redirectUrl, 
             'success_redirect_url' => $redirectUrl ];
-            dd($para);
 
-        return $service->createInvoice($req->all(),$para);
+
+        return $service->createInvoice($request->all(),$para);
     }
     
 }

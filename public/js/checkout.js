@@ -11,7 +11,7 @@
     let invoiceUrl;
     const buttonStartDemo = document.getElementById('button-start-demo');
     const formConfigure = document.getElementById('form-configure');
-    const total = document.getElementById("totalp");
+    // const total = document.getElementById("totalp");
 
     formConfigure.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -36,7 +36,8 @@
                 const response = await fetch('/api/invoice', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json;charset=utf-8'
+                        'Content-Type': 'application/json;charset=utf-8',
+                        'Authorization': 'Bearer s2clxQSdO1jFYhif5W5C4MV2bcIO2ykNNaZjIpIU', //token
                     },
                     body: JSON.stringify(invoiceData)
                 });

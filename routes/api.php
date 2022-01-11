@@ -18,4 +18,4 @@ use App\Http\Controllers\Checkout\CheckoutController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post("invoice", [CheckoutController::class,'create']);
+Route::middleware('auth:sanctum')->post("invoice", [CheckoutController::class,'create']);
