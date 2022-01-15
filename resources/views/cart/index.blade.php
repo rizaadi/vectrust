@@ -238,7 +238,7 @@
                     <div class="cart-total-wrapper">
                         <div class="small-title">Order Total</div>
                         <div class="total-price">IDR.{{\Cart::session(auth()->id())->getTotal()}}</div>
-                        <input type="hidden" name="totalp" value="{{\Cart::session(auth()->id())->getTotal()}}">
+                        <div id="totalp" style="display: none;">{{\Cart::session(auth()->id())->getTotal()}}</div>
                         <!-- <div class="total-price-details">
                                 <div class="field">
                                     <div class="label">Cart</div>

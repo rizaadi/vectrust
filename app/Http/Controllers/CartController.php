@@ -5,8 +5,41 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Cart;
+use Xendit\Xendit;
+use App\Http\Services\Checkout\CheckoutService as Service;
+
 class CartController extends Controller
 {
+    public function fetchCartz(Request $request){
+
+        $date = new \DateTime();
+        $currentDate = $date->getTimestamp();
+        $userid = $request->user()->id;
+        $cartItems = \Cart::session($userid)->getContent();
+        $cartTotal = \Cart::session($userid)->getTotal();
+        
+        foreach($cartItems as $row){
+            $dataItems[] = [
+                'name'=> $row->name,
+                'quantity'=> $row->quantity,
+                'price'=> $row->price,
+            ];
+        }
+        
+        $redirectUrl = '';
+        $datainvo = [
+            'external_id'=> 'Transaksi'.'-' . $userid,
+            'amount'=> intval($cartTotal) ,
+            'payer_email'=> 'wildan@xendit.co',
+            'description'=> 'This is a description',
+            'currency'=> 'IDR',
+            'locale'=> 'id',
+            'items'=> $dataItems
+            ];
+            // dd($datainvo);
+            
+        return response()->json($datainvo);
+    }
     public function fetchCart(){
 
         $cartItems = \Cart::session(auth()->id())->getContent();

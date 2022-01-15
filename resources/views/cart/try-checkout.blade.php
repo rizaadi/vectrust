@@ -13,7 +13,7 @@
            
             <div class="body">
                 <div class="body__icon-demo"></div>
-                <h2 class="body__title">Hey {name}!</h2>
+                <h2 class="body__title">Hey {{Auth::user()->name}} !</h2>
                 <div class="body__message">
                     Thank You for being our valued customer.<br />Your support and trust in us are much appreciated.
                 </div>
@@ -32,4 +32,8 @@
                 <div class="footer__logo-xendit"></div>
             </footer>
         </main>
+@endsection
+@section('page-style')
+<!-- Javascripts -->
+<script src="/js/getinvoice.js"></script>
 @endsection

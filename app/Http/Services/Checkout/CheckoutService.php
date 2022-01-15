@@ -4,6 +4,7 @@ namespace App\Http\Services\Checkout;
 
 use Xendit\Xendit;
 use Illuminate\Http\Request;
+use App\Models\Transaction;
 
 class CheckoutService {
 
@@ -11,21 +12,24 @@ class CheckoutService {
         Xendit::setApiKey(env('API_KEY'));
     }
 
-    public function createInvoice($args,$para ) {
-        
-        $data = json_decode(json_encode($args), true);
-        $para['failure_redirect_url'] = $data['redirect_url'];
-        $para['success_redirect_url'] = $data['redirect_url'];
-        $params = array_merge($para, $data);
-        dd($params);
+    public function createInvoice($args) {
         $response = [];
 
         try {
-            $response = \Xendit\Invoice::create($params);
+            $response = \Xendit\Invoice::create($args);
+
         } catch (\Throwable $e) {
             $response['message'] = $e->getMessage();
         }
-
+        $userid = auth()->id();
+        $create = Transaction::create(
+            ['id_users'=> $userid,
+            'id_transaction'=>$response['id'],
+            'transaction'=>$response['external_id'],
+            'totalOrder'=>$response['amount'],
+            'status'=> $response['status']]
+        );
+        \Cart::session($userid)->clear();
         logger($response);
         return $response;
     }

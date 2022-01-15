@@ -4,6 +4,7 @@
  * This file contains the logic behind demo store page
  */
 
+
 (async () => {
     'use strict';
 
@@ -15,10 +16,8 @@
 
     formConfigure.addEventListener('submit', (event) => {
         event.preventDefault();
-
         startDemo();
     });
-
 
     // handles invoice creation upon checkout demo launch
     const startDemo = async () => {
@@ -27,40 +26,37 @@
         if (!invoiceUrl) {
             // setup invoice data
             // const { currency, amount } = displayedCartDetails.cart.total;
-            var redirect_url = `${window.location.origin}/try-checkout`;
             const invoiceData = {
-                'failure_redirect_url': `${window.location.origin}/try-checkout`,
-                'success_redirect_url': `${window.location.origin}/try-checkout`,
+                external_id:'teslah',
+                amount:5000,
+                redirect_url: `${window.location.origin}/try-checkout`
             };
 
             // create an invoice for store checkout
             try {
+                // let response2 = await fetch('/fetchcartz', {
+                //     method: 'GET',
+                // });
 
-                let response2 = await fetch('/fetchcartz', {
-                    method: 'GET',
-                });
-
-                let data2 = await response2.json();
-                let data3 = {
-                    ...data2,
-                    ...invoiceData
-                }
-
+                // let data2 = await response2.json();
+                // let data3 = {...data2,...invoiceData}
+                
                 const response = await fetch('/api/invoice', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json;charset=utf-8',
-                        'Authorization': 'Bearer 2R2gZvra94CqHUdvrUQfUsnT5NfcIE5ADOeiMGqV', //token
+                        'Authorization': 'Bearer s2clxQSdO1jFYhif5W5C4MV2bcIO2ykNNaZjIpIU', //token
                     },
-                    body: JSON.stringify(data3)
+                    body: JSON.stringify(invoiceData)
                 });
 
                 const data = await response.json();
+
+
                 if (response.status >= 200 &&
                     response.status <= 299 &&
                     typeof data.invoice_url !== 'undefined')
                     invoiceUrl = data.invoice_url;
-
                 else alert(data.message);
             } catch (error) {
                 alert(error);

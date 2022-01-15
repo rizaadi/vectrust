@@ -77,21 +77,7 @@
                             </div>
                             <div class="featured-item-post-content">
                                 <div class="item-rating">
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span class="filled"><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
-                                    <span><svg class="crumina-icon">
-                                            <use xlink:href="#star2-icon"></use>
-                                        </svg></span>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -125,7 +111,7 @@
                             </div>
                             <div class="featured-item-info">
                                 <div class="item-category social-graphics">
-                                    Social graphics
+                                {{$v->category}}
                                 </div>
                                 <div class="title"><a href="{{route('view.vector', $vector->id)}}">{{$vector->name}}</a>
                                 </div>
@@ -138,21 +124,7 @@
                         </div>
                         <div class="featured-item-post-content">
                             <div class="item-rating">
-                                <span class="filled"><svg class="crumina-icon">
-                                        <use xlink:href="#star2-icon"></use>
-                                    </svg></span>
-                                <span class="filled"><svg class="crumina-icon">
-                                        <use xlink:href="#star2-icon"></use>
-                                    </svg></span>
-                                <span class="filled"><svg class="crumina-icon">
-                                        <use xlink:href="#star2-icon"></use>
-                                    </svg></span>
-                                <span class="filled"><svg class="crumina-icon">
-                                        <use xlink:href="#star2-icon"></use>
-                                    </svg></span>
-                                <span><svg class="crumina-icon">
-                                        <use xlink:href="#star2-icon"></use>
-                                    </svg></span>
+                                
                             </div>
                             <div class="item-price"></div>
                         </div>

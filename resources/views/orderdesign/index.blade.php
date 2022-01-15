@@ -319,7 +319,7 @@
                             <div class="fav-counter">
                                 <a href="{{route('cart.add', $product->id)}}">
                                     <svg class="crumina-icon">
-                                        <use xlink:href="#heart-icon"></use>
+                                        <use xlink:href="#bag-icon"></use>
                                     </svg><span class="count">Cart</span>
                                 </div>
                             <div class="featured-item-image"><a href="{{route('products.index', $product->id)}}">

@@ -29,6 +29,7 @@ Route::get('/add-to-cart/{product}', [CartController::class,'add'])->name('cart.
 Route::get('/cart', [CartController::class,'index'])->name('cart.index')->middleware('auth');
 Route::get('/cart/destroy/{itemId}', [CartController::class,'destroy'])->name('cart.destroy')->middleware('auth');
 Route::get('/fetchcart', [CartController::class,'fetchCart'])->name('fetch.cart')->middleware('auth');
+Route::get('/fetchcartz', [CartController::class,'fetchCartz'])->name('fetch.cartz')->middleware('auth');
 
 
 Route::group(['middleware' => ['role:creator']], function () {

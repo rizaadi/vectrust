@@ -12,24 +12,9 @@
                                         <use xlink:href="#check-icon"></use>
                                     </svg></span></span>{{$userProfile->name}}</div>
                         <div class="item-category social-graphics">
-                            Social graphics
+                        {{$vector->category}}
                         </div>
                         <div class="item-rating">
-                            <span class="filled"><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
-                            <span class="filled"><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
-                            <span class="filled"><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
-                            <span class="filled"><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
-                            <span><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
                         </div>
                     </div>
                 </div>
@@ -94,13 +79,11 @@
                                 <li>Published</li>
                                 <li>Updated</li>
                                 <li>Files included</li>
-                                <li>Software</li>
                             </ul>
                             <ul class="details-value">
                                 <li>{{$vector->created_at->format('m/d/Y')}}</li>
                                 <li>{{$vector->updated_at->format('m/d/Y')}}</li>
                                 <li>{{$vector->itemFile}}</li>
-                                <li>{{$vector->itemSoftware}}</li>
                             </ul>
                         </div>
                     </div>
