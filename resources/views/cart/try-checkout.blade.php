@@ -35,5 +35,5 @@
 @endsection
 @section('page-style')
 <!-- Javascripts -->
-<script src="/js/getinvoice.js"></script>
+<!-- <script src="/js/getinvoice.js"></script> -->
 @endsection

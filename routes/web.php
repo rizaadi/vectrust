@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VectorController;
 use App\Http\Controllers\OrderdesignController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\Checkout\CheckoutController;
 
 /*
@@ -49,6 +50,7 @@ Route::group(['middleware' => ['role:creator']], function () {
     Route::post('profile/deletevector',[ProfileController::class,'deleteVector'])->name('delete.vector');
 });
 Route::get('profile/fetchvector',[ProfileController::class,'indexManage'])->name('fetch.vector');
+Route::get('profile/paymenthistory',[ProfileController::class,'paymentHistory'])->name('paymenthistory.vector');
 
 
 Route::get('/download/{idv}/{filename}',[VectorController::class,'download'])->name('download.vector');

@@ -33,4 +33,23 @@ class CheckoutService {
         logger($response);
         return $response;
     }
+        public function getinvoice(){
+        $getInvoice=[];
+        $para = [];
+        $id = session(auth()->id());
+        $dataid = Transaction::all();
+        foreach ($dataid as $value) {
+            array_push($para,$value->id_transaction);
+        }
+        try {
+            for ($i=0; $i < count($para); $i++) { 
+                $getinv = \Xendit\Invoice::retrieve($para[$i]);
+                array_push($getInvoice,$getinv);
+            }
+        } catch (\Throwable $th) {
+            $getInvoice['message'] = $th->getMessage();
+        }
+        // dd($getInvoice);
+        return print_r($getInvoice);
+    }
 }

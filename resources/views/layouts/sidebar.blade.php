@@ -19,6 +19,9 @@
                         <use xlink:href="#picture-icon"></use>
                     </svg>Manage Items</a></li>
             @endrole
+            <li><a href="{{route('paymenthistory.vector')}}"><svg class="crumina-icon">
+                        <use xlink:href="#dollar-icon"></use>
+                    </svg>Paymen History</a></li>
             <li><a href=""><svg class="crumina-icon">
                         <use xlink:href="#circle-checked-icon"></use>
                     </svg>Get Verified Creator</a></li>
