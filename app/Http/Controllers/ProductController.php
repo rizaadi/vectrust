@@ -68,8 +68,9 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         $cartItems = \Cart::session(auth()->id())->getContent();
-        
-        return view('products.index',['product' => $product, 'cartItems' => $cartItems]);
+        $userProfile = Product::where('products.id',$product->id)->join('users','products.id_users','=','users.id')->select('users.name','users.username')->first();
+        // dd($userProfile);
+        return view('products.index',['product' => $product, 'cartItems' => $cartItems,'userProfile'=>$userProfile]);
     }
 
     /**

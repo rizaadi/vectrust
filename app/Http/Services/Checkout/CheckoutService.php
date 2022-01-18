@@ -33,6 +33,7 @@ class CheckoutService {
         logger($response);
         return $response;
     }
+    
         public function getinvoice(){
         $getInvoice=[];
         $para = [];
@@ -49,7 +50,8 @@ class CheckoutService {
         } catch (\Throwable $th) {
             $getInvoice['message'] = $th->getMessage();
         }
+        json_decode(json_encode($getInvoice));
         // dd($getInvoice);
-        return print_r($getInvoice);
+        return $getInvoice;
     }
 }

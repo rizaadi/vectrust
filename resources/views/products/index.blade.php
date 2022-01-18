@@ -10,31 +10,17 @@
                                         src="{{asset('img/avatar.png')}}" alt=""></a><span class="verified"><svg
                                         class="crumina-icon">
                                         <use xlink:href="#check-icon"></use>
-                                    </svg></span></span>@DexterStark</div>
+                                    </svg></span></span>&#64;{{$userProfile->username}}</div>
                         <div class="item-category social-graphics">
-                            Social graphics
+                            {{$product->category}}
                         </div>
                         <div class="item-rating">
-                            <span class="filled"><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
-                            <span class="filled"><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
-                            <span class="filled"><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
-                            <span class="filled"><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
-                            <span><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
+                            
                         </div>
                     </div>
                 </div>
                 <div class="product-image">
-                    <img src="{{asset('img/content/product-img/product-2.png')}}" alt="Product Image">
+                    <img src="/storage/files/{{$product->cover_img}}" alt="Product Image">
                 </div>
                 <div class="product-info">
                     <div class="tabs-block swiper-container">
@@ -57,33 +43,8 @@
                             <div id="tab1" class="tab active">
                                 <div class="tab-content">
                                     <div class="product-description">
-                                        <div class="title h6">Revive your Twitter with Awesome Graphics!</div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor
-                                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat.
-                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                            eu
-                                            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                                            in
-                                            culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                                            veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                                        <ul class="list-line-height">
-                                            <li><svg class="crumina-icon bullet-icon">
-                                                    <use xlink:href="#circle-icon"></use>
-                                                </svg>1500x500 pixels</li>
-                                            <li><svg class="crumina-icon bullet-icon">
-                                                    <use xlink:href="#circle-icon"></use>
-                                                </svg>All free fonts used</li>
-                                            <li><svg class="crumina-icon bullet-icon">
-                                                    <use xlink:href="#circle-icon"></use>
-                                                </svg>PS vectors for easier customization</li>
-                                        </ul>
-                                        <p>Remember to follow our <a href="#">profile</a> to know when new items are
-                                            released!</p>
+                                        <!-- <div class="title h6">Revive your Twitter with Awesome Graphics!</div> -->
+                                        <p>{{$product->description}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -93,10 +54,6 @@
             </div>
             <aside>
                 <div class="product-additional-info">
-                    <div class="product-fav-counter"><svg class="crumina-icon">
-                            <use xlink:href="#heart-icon"></use>
-                        </svg><span class="count">105</span>
-                    </div>
                     <div class="product-purchase-info">
                         <form class="cryptoki-form" id="purchase-form">
                             <div class="product-price">
@@ -143,30 +100,13 @@
                             </div>
                             <div class="seller-meta">
                                 <div class="seller-name">
-                                    <div class="name"><a href="06-profile-page.html">Dexter Stark</a></div>
-                                    <div class="meta gradient-text">@dexterstark</div>
+                                    <div class="name"><a href="06-profile-page.html">{{$userProfile->name}}</a></div>
+                                    <div class="meta gradient-text">&#64;{{$userProfile->username}}</div>
                                 </div>
-                                <ul class="social-icons-list">
-                                    <li class="social-icon icon-border"><a href="#"><svg class="crumina-icon">
-                                                <use xlink:href="#link-icon"></use>
-                                            </svg></a></li>
-                                    <li class="social-icon icon-border"><a href="#"><svg class="crumina-icon">
-                                                <use xlink:href="#facebook-icon"></use>
-                                            </svg></a></li>
-                                    <li class="social-icon icon-border"><a href="#"><svg class="crumina-icon">
-                                                <use xlink:href="#twitter-icon"></use>
-                                            </svg></a></li>
-                                    <li class="social-icon icon-border"><a href="#"><svg class="crumina-icon">
-                                                <use xlink:href="#instagram-icon"></use>
-                                            </svg></a></li>
-                                    <li class="social-icon icon-border"><a href="#"><svg class="crumina-icon">
-                                                <use xlink:href="#twitch-icon"></use>
-                                            </svg></a></li>
-                                </ul>
                                 <div class="seller-buttons">
-                                    <a class="btn  btn-small-wide gradient-background"
+                                    <!-- <a class="btn  btn-small-wide gradient-background"
                                         href="06-profile-page.html">Profile</a>
-                                    <a class="btn  btn-small-wide btn-dark" href="#">Follow</a>
+                                    <a class="btn  btn-small-wide btn-dark" href="#">Follow</a> -->
                                 </div>
                             </div>
 

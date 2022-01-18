@@ -14,24 +14,28 @@
                                 <thead>
                                     <tr>
                                         <th scope="col" class="heading-label">Date</th>
-                                        <th scope="col" class="heading-label">Method</th>
+                                        <th scope="col" class="heading-label">Emali</th>
                                         <th scope="col" class="heading-label">Amount</th>
+                                        <th scope="col" class="heading-label">Payment</th>
                                         <th scope="col" class="heading-label">Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($datahistory as $gi)
+                                    @foreach($datahistory as $key=>$value)
+                                    
                                     <tr>
                                         <td data-label="Date">
-                                            <div class="date">{{$gi['create']}}</div>
+                                            <div class="date">{{$value['created']}}</div>
                                         </td>
                                         <td data-label="Method">
-                                            <div class="item-title">{{$gi->payer_email}}
+                                            <div class="item-title">{{$value['payer_email']}}
                                             </div>
                                         </td>
-                                        <td data-label="Amount" class="stat-value">{{$gi->amount}}</td>
-                                        <td data-label="price" class="stat-value">{{$gi->status}}</td>
+                                        <td data-label="Amount" class="stat-value">{{$value['amount']}}</td>
+                                        <td data-label="Amount" class="stat-value">{{$value['payment_channel']}}</td>
+                                        <td data-label="price" class="stat-value">{{$value['status']}}</td>
                                     </tr>
+                                    
                                     @endforeach
                                 </tbody>
                             </table>

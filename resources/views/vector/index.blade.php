@@ -100,7 +100,7 @@
                             <div class="seller-meta">
                                 <div class="seller-name">
                                     <div class="name"><a href="">{{$userProfile->name}}</a></div>
-                                    <div class="meta gradient-text">@ {{$userProfile->username}}</div>
+                                    <div class="meta gradient-text">&#64;{{$userProfile->username}}</div>
                                 </div>
                                 <div class="seller-buttons">
                                     <a class="btn  btn-small-wide gradient-background"
