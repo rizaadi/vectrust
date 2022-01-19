@@ -13,17 +13,17 @@
                 <form method="get" class="main-search">
                     <input class="main-search-params" type="hidden" name="params" value="all" />
                     <button class="search-params">
-                        <span class="button-text search-param-title">All Categories</span>
-                        <svg class="crumina-icon">
+                        <span class="button-text search-param-title"></span>
+                        <!-- <svg class="crumina-icon">
                             <use xlink:href="#arrow-down-icon"></use>
-                        </svg>
+                        </svg> -->
                     </button>
-                    <ul class="search-dropdown">
+                    <!-- <ul class="search-dropdown">
                         <li data-param="all">All Categories</li>
                         <li data-param="ui-templates">UI templates</li>
                         <li data-param="coded-templates">Coded templates</li>
                         <li data-param="social-graphics">Social Graphics</li>
-                    </ul>
+                    </ul> -->
                     <input type="text" class="search-input" placeholder="Enter your search here...">
                     <button class="search-button">
                         <svg class="crumina-icon">
@@ -93,7 +93,7 @@
     <div class="container section-padding">
         <div class="section-title-wrapper">
             <div class="section-title"><span class="gradient-text">Newest</span> Vector</div>
-            <div class="all-items-link"><a href="02-explore.html">Explore all Artworks</a></div>
+            <!-- <div class="all-items-link"><a href="02-explore.html">Explore all Artworks</a></div> -->
         </div>
         <div class="featured-box">
             <div class="featured-box-wrapper grid-4-columns">

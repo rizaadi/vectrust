@@ -14,6 +14,11 @@ class CheckoutService {
 
     public function createInvoice($args) {
         $response = [];
+        $userid = auth()->id();
+        $cartItem = \Cart::session($userid)->getContent();
+        foreach ($cartItem as $row) {
+            $vectorz = Product::find($row->id)->increment('itemSales');
+        }
 
         try {
             $response = \Xendit\Invoice::create($args);
@@ -21,7 +26,6 @@ class CheckoutService {
         } catch (\Throwable $e) {
             $response['message'] = $e->getMessage();
         }
-        $userid = auth()->id();
         $create = Transaction::create(
             ['id_users'=> $userid,
             'id_transaction'=>$response['id'],
@@ -29,6 +33,7 @@ class CheckoutService {
             'totalOrder'=>$response['amount'],
             'status'=> $response['status']]
         );
+        
         \Cart::session($userid)->clear();
         logger($response);
         return $response;
@@ -50,7 +55,7 @@ class CheckoutService {
         } catch (\Throwable $th) {
             $getInvoice['message'] = $th->getMessage();
         }
-        json_decode(json_encode($getInvoice));
+        // $getInvoice['created']->
         // dd($getInvoice);
         return $getInvoice;
     }

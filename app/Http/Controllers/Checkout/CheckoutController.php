@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Xendit\Xendit;
 use App\Http\Services\Checkout\CheckoutService as Service;
+use App\Models\Product;
 
 class CheckoutController extends Controller
 {
@@ -24,7 +25,6 @@ class CheckoutController extends Controller
 
     public function create(Request $request) {
         $service = new Service();
-
 
         return $service->createInvoice($request->all());
     }

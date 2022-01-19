@@ -214,7 +214,7 @@
     --secondary-accent-color: #feda03;
     --primary-gradient-color: #6345ed;
     --secondary-gradient-color: #e139fd;
-    --cryptoki-gradient: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color));
+    --cryptoki-gradient: linear-gradient(to right, var(--fuchsia-color) 20%, var(--ds-red2));
     /* ===============================
        1.2. Body background and font colors
        =============================== */
@@ -244,6 +244,7 @@
     --ds-yellow: #feda03;
     --cryptoki-box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0,0,0,.12);
     --ds-red: #f32a63;
+    --ds-red2: #AC001D;
     --ds-green: #00bf8b;
     --btn-dark: #252831;
     --ui-templates: var(--cryptoki-blue);
@@ -291,8 +292,8 @@ body.dark-mode {
     --lighter-gray: #20232b;
     --extra-light-gray: #20232b;
     --primary-accent-color: #00ffcc;
-    --primary-gradient-color: #177afa;
-    --secondary-gradient-color: #03f0d1;
+    --primary-gradient-color: #ff2654;
+    --secondary-gradient-color: #AC001D;
     --cryptoki-gradient: linear-gradient(to right, var(--primary-gradient-color) 20%, var(--secondary-gradient-color));
     --toggle-background-color-on: var(--cryptoki-gradient);
     --cryptoki-box-shadow: 0 3px 5px -1px rgba(255, 255, 255, 0.2), 0 6px 10px 0 rgba(255, 255, 255, 0.14), 0 1px 18px 0 rgba(255, 255, 255, .12);

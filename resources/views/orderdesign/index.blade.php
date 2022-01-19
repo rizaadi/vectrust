@@ -328,7 +328,7 @@
                             </a>
                             <div class="featured-item-info">
                                 <div class="item-category social-graphics">
-                                    Social graphics
+                                    {{$product->category}}
                                 </div>
                                 <div class="title"><a href="{{route('products.index', $product->id)}}">{{$product->name}}</a>
                                 </div>

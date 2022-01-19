@@ -308,10 +308,12 @@
                         </div>
                         <div class="avatar box-42">
                             <img src="{{ Auth::user()->profile_photo_url }}" alt="avatar">
+                            @role('creator')
                             <span class="verified"><svg
                                     class="crumina-icon">
                                     <use xlink:href="#check-icon"></use>
                                 </svg></span>
+                            @endrole
                         </div>
                         <div class="closing-icon">
                             <svg class="crumina-icon close-icon">
@@ -323,10 +325,13 @@
                             <div class="profile-dropdown-body">
                                 <div class="profile-heading">
                                     <div class="profile-avatar avatar box-26">
-                                        <img src="{{asset('img/avatar.png')}}" alt="avatar"><span class="verified"><svg
+                                        <img src="{{ Auth::user()->profile_photo_url }}" alt="avatar">
+                                        @role('creator')
+                                        <span class="verified"><svg
                                                 class="crumina-icon">
                                                 <use xlink:href="#check-icon"></use>
                                             </svg></span>
+                                            @endrole
                                     </div>
                                     <div class="profile-link">
                                         <a class="btn  btn-small gradient-background" href="06-profile-page.html">My

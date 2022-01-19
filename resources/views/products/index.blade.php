@@ -67,7 +67,7 @@
                     </div>
                     <div class="product-score">
                         <div class="score-item">
-                            <div class="value">27</div>
+                            <div class="value">{{$product->itemSales}}</div>
                             <div class="label">Item Sales</div>
                         </div>
                         <div class="score-item">
